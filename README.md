@@ -1,2 +1,2 @@
-# tinderbox
-sem 6 hackathon 2016
+# Tinderbox
+EAL WebDev Sem 6 - hackathon 2016
