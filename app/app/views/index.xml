@@ -6,8 +6,8 @@
        </View>
        <View id="nav">
        		<View class="tab active">
-				<ImageView class="tab_img" image="matches.png" />
-				<Label class="tab_lbl" text="Home" />	
+				<ImageView class="tab_img active" image="matches.png" />
+				<Label class="tab_lbl active" text="Home" />	
 			</View>
 			<View class="tab">
 				<ImageView class="tab_img" image="top_players.png" />

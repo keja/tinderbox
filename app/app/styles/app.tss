@@ -14,22 +14,25 @@
 	}
 }
 
+//HEADER
+
 "#header": {
-	height: "7,3463268366%",
+	height: Alloy.CFG.header_height,
 	backgroundColor: "#043540"
 }
 
+//VIEW
+
 "#view": {
-	height: "85,3073463268%",
+	height: Alloy.CFG.view_height,
 	backgroundColor: "#fff9f4"
 }
 
-".active": {
-	color: "#233a59"
-}
+//NAV
 
 "#nav": {
-	height: "7,3463268366%"
+	height: Alloy.CFG.nav_height,
+	bottom: 30
 }
 
 ".tab": {
@@ -49,4 +52,7 @@
 	font: {
 		fontSize: "10"
 	}
+}
+".active": {
+	color: "#ffd962"
 }
