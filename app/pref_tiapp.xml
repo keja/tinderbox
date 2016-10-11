@@ -8,8 +8,8 @@
     <description/>
     <copyright>2016 by kenneth</copyright>
     <icon>appicon.png</icon>
-    <fullscreen>false</fullscreen>
-    <navbar-hidden>false</navbar-hidden>
+    <fullscreen>true</fullscreen>
+    <navbar-hidden>true</navbar-hidden>
     <analytics>true</analytics>
     <guid>64c91194-1978-4496-83ea-94935874a509</guid>
     <property name="ti.ui.defaultunit" type="string">dp</property>
@@ -35,7 +35,7 @@
                 <key>UIPrerenderedIcon</key>
                 <false/>
                 <key>UIStatusBarHidden</key>
-                <false/>
+                <true/>
                 <key>UIStatusBarStyle</key>
                 <string>UIStatusBarStyleDefault</string>
             </dict>
