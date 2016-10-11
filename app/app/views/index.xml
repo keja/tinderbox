@@ -1,9 +1,9 @@
 <Alloy>
     <Window id="index">
        <View id="header"></View>
-       <View id="view">
+       <ScrollView id="view">
        		<Require src="home"></Require>
-       </View>
+       </ScrollView>
        <View id="nav">
        		<View class="tab active">
 				<ImageView class="tab_img active" image="matches.png" />
