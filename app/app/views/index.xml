@@ -1,7 +1,30 @@
 <Alloy>
-	<NavigationWindow id="index" backgroundColor="#043540">
-        <Window id="win2" title="tinderbox" >
-            <Button id="button">Open Blue Window</Button>
-        </Window>
-    </NavigationWindow>
+    <Window id="index">
+       <View id="header"></View>
+       <View id="view">
+       		<Require src="home"></Require>
+       </View>
+       <View id="nav">
+       		<View class="tab active">
+				<ImageView class="tab_img" image="matches.png" />
+				<Label class="tab_lbl" text="Home" />	
+			</View>
+			<View class="tab">
+				<ImageView class="tab_img" image="top_players.png" />
+				<Label class="tab_lbl" text="Groups" />	
+			</View>
+			<View class="tab">
+				<ImageView class="tab_img" image="favorites.png" />
+				<Label class="tab_lbl" text="Schedule" />	
+			</View>
+			<View class="tab">
+				<ImageView class="tab_img" image="settings.png" />
+				<Label class="tab_lbl" text="Map" />	
+			</View>
+			<View class="tab">
+				<ImageView class="tab_img" image="settings.png" />
+				<Label class="tab_lbl" text="More" />	
+			</View>		
+       </View>
+    </Window>
 </Alloy>

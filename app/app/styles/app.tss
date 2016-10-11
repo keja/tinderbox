@@ -1,26 +1,52 @@
-/*
-
-This is your global styles file. Selectors and rules you define
-here will be applied throughout your app. However, these rules
-have the lowest priority of any style settings.
-
-For more information, see the "Style Priorities" section of
-http://docs.appcelerator.com/platform/latest/#!/guide/Alloy_Styles_and_Themes
-
-For example, the following would apply to all labels, windows,
-and text fields (depending on platform) in your app unless you
-overrode the settings with other TSS, XML, or JS settings:
-
-'Label[platform=android,windows]': {
-	color: '#000' // all platforms except Android and Windows default to black
+"Window": {
+	layout: "vertical",
+	backgroundColor: "#0e2040"
 }
 
-'Window': {
-	backgroundColor: '#fff' // white background instead of default transparent or black
+"View": { 
+	layout: "horizontal"
 }
 
-'TextField[platform=android]': {
-	height: Ti.UI.SIZE
+"Label": {
+	color: "#fff",
+	font: {
+		fontSize: "12px"
+	}
 }
 
-*/
+"#header": {
+	height: "7,3463268366%",
+	backgroundColor: "#043540"
+}
+
+"#view": {
+	height: "85,3073463268%",
+	backgroundColor: "#fff9f4"
+}
+
+".active": {
+	color: "#233a59"
+}
+
+"#nav": {
+	height: "7,3463268366%"
+}
+
+".tab": {
+	width: "20%",
+	height: "100%",
+	textAlign: "center",
+	backgroundColor: "#043540",
+	layout: "vertical"
+}
+
+".tab_img": {
+	top: "20%",
+	width: "25%"
+}
+".tab_lbl": {
+	color: "#fff",
+	font: {
+		fontSize: "10"
+	}
+}
