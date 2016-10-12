@@ -62,5 +62,8 @@
 	}
 }
 ".active": {
-	color: "#ffd962"
+	color: "#ffd962",
+	font: {
+		fontSize: 6
+	}
 }

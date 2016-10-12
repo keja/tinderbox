@@ -5,7 +5,7 @@
    
        </ScrollView>
        <View id="nav">
-       		<View class="tab active" id="tab_home" onClick="views.home">
+       		<View class="tab" id="tab_home" onClick="views.home">
 				<ImageView class="tab_img active" image="matches.png" />
 				<Label class="tab_lbl active" text="Home" />	
 			</View>
@@ -20,7 +20,7 @@
 			<View class="tab" id="tab_map" onClick="views.map">
 				<ImageView class="tab_img" image="settings.png" />
 				<Label class="tab_lbl" text="Map" />	
-			</View>
+			</View> 
 			<View class="tab" id="tab_more" onClick="views.more">
 				<ImageView class="tab_img" image="settings.png" />
 				<Label class="tab_lbl" text="More" />	

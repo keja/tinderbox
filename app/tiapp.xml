@@ -1,66 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ti:app xmlns:ti="http://ti.appcelerator.org">
-    <id>com.tinderbox.grp</id>
-    <name>tinderbox</name>
-    <version>1.0</version>
-    <publisher>kenneth</publisher>
-    <url/>
-    <description>undefined</description>
-    <copyright>2016 by kenneth</copyright>
-    <icon>appicon.png</icon>
-    <fullscreen>true</fullscreen>
-    <navbar-hidden>true</navbar-hidden>
-    <analytics>true</analytics>
-    <guid>a24e0154-a0c2-4567-9666-d1e63821d835</guid>
-    <property name="ti.ui.defaultunit" type="string">dp</property>
-    <property name="run-on-main-thread" type="bool">true</property>
-    <ios>
-        <enable-launch-screen-storyboard>true</enable-launch-screen-storyboard>
-        <use-app-thinning>true</use-app-thinning>
-        <plist>
-            <dict>
-                <key>UISupportedInterfaceOrientations~iphone</key>
-                <array>
-                    <string>UIInterfaceOrientationPortrait</string>
-                </array>
-                <key>UISupportedInterfaceOrientations~ipad</key>
-                <array>
-                    <string>UIInterfaceOrientationPortrait</string>
-                    <string>UIInterfaceOrientationPortraitUpsideDown</string>
-                    <string>UIInterfaceOrientationLandscapeLeft</string>
-                    <string>UIInterfaceOrientationLandscapeRight</string>
-                </array>
-                <key>UIRequiresPersistentWiFi</key>
-                <false/>
-                <key>UIPrerenderedIcon</key>
-                <false/>
-                <key>UIStatusBarHidden</key>
-                <true/>
-                <key>UIStatusBarStyle</key>
-                <string>UIStatusBarStyleDefault</string>
-            </dict>
-        </plist>
-    </ios>
-    <android xmlns:android="http://schemas.android.com/apk/res/android"/>
+<ti:app 
+  xmlns:ti="http://ti.appcelerator.org">
+  <id>com.tinderbox.grp</id>
+  <name>tinderbox</name>
+  <version>1.0</version>
+  <publisher>kenneth</publisher>
+  <url/>
+  <description>undefined</description>
+  <copyright>2016 by kenneth</copyright>
+  <icon>appicon.png</icon>
+  <fullscreen>true</fullscreen>
+  <navbar-hidden>true</navbar-hidden>
+  <analytics>true</analytics>
+  <guid>56779ff8-6c1c-4ce1-9bbb-f5dee09a1f59</guid>
+  <property name="ti.ui.defaultunit" type="string">dp</property>
+  <property name="run-on-main-thread" type="bool">true</property>
+  <ios>
+    <enable-launch-screen-storyboard>true</enable-launch-screen-storyboard>
+    <use-app-thinning>true</use-app-thinning>
+    <plist>
+      <dict>
+        <key>UISupportedInterfaceOrientations~iphone</key>
+        <array>
+          <string>UIInterfaceOrientationPortrait</string>
+        </array>
+        <key>UISupportedInterfaceOrientations~ipad</key>
+        <array>
+          <string>UIInterfaceOrientationPortrait</string>
+          <string>UIInterfaceOrientationPortraitUpsideDown</string>
+          <string>UIInterfaceOrientationLandscapeLeft</string>
+          <string>UIInterfaceOrientationLandscapeRight</string>
+        </array>
+        <key>UIRequiresPersistentWiFi</key>
+        <false/>
+        <key>UIPrerenderedIcon</key>
+        <false/>
+        <key>UIStatusBarHidden</key>
+        <true/>
+        <key>UIStatusBarStyle</key>
+        <string>UIStatusBarStyleDefault</string>
+      </dict>
+    </plist>
+  </ios>
+  <android 
+    xmlns:android="http://schemas.android.com/apk/res/android"/>
     <mobileweb>
-        <precache/>
-        <splash>
-            <enabled>true</enabled>
-            <inline-css-images>true</inline-css-images>
-        </splash>
-        <theme>default</theme>
+      <precache/>
+      <splash>
+        <enabled>true</enabled>
+        <inline-css-images>true</inline-css-images>
+      </splash>
+      <theme>default</theme>
     </mobileweb>
     <modules/>
     <deployment-targets>
-        <target device="android">true</target>
-        <target device="ipad">false</target>
-        <target device="iphone">true</target>
-        <target device="mobileweb">false</target>
-        <target device="windows">false</target>
+      <target device="android">true</target>
+      <target device="ipad">false</target>
+      <target device="iphone">true</target>
+      <target device="mobileweb">false</target>
+      <target device="windows">false</target>
     </deployment-targets>
-    <sdk-version>5.5.1.GA</sdk-version>
+    <sdk-version>5.5.0.GA</sdk-version>
     <plugins>
-        <plugin version="1.0">ti.alloy</plugin>
+      <plugin version="1.0">ti.alloy</plugin>
     </plugins>
-    <property name="appc-app-id" type="string">57fcda92af27226007e7e49a</property>
-</ti:app>
+    <property name="appc-app-id" type="string">57fdf7a0c02209cc4aebed20</property>
+  </ti:app>
