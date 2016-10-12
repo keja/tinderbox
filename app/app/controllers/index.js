@@ -1,6 +1,7 @@
 var controllers = {
 	home: Alloy.createController('home'),
-	map: Alloy.createController('map')
+	map: Alloy.createController('map'),
+	groups: Alloy.createController('groups')
 };
 var views = {
 	_show: function(v){
@@ -13,6 +14,9 @@ var views = {
 	},
 	home: function(){
 		views._show("home");
+	},
+	groups: function(){
+		views._show("groups");
 	}
 };
 

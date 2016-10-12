@@ -4,6 +4,15 @@
        <ScrollView id="view">
        		<!--<Require id="view_home" src="home" />
        		<Require id="view_map" src="map" class="hidden" />-->
+       		
+       		<View><Label>HEj</Label></View>
+       		
+       		
+       		
+       		
+       		
+       		
+       		
        </ScrollView>
        <View id="nav">
        		<View class="tab active" onClick="views.home">
