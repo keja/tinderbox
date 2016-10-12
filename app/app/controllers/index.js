@@ -4,10 +4,8 @@ var controllers = {
 	groups: Alloy.createController('groups'),
 	schedule: Alloy.createController('schedule')
 };
-
-
 var views = {
-
+	
 	_show: function(v){
 		$.view.removeAllChildren();//remove all content from view
 		$.view.add([ controllers[v].getView() ]);//add new content to the view
@@ -31,5 +29,5 @@ var views = {
 	}
 };
 
-$.index.addEventListener("open", views.home); //make the default view = home
+$.index.addEventListener("open", views.groups); //make the default view = home
 $.index.open();

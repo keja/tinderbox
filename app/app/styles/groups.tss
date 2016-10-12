@@ -1,4 +1,43 @@
+"#headline" : {
+	layout: "vertical"
+}
+"#headlab" : {
+	top: 20,
+	left: 17,
+	color: "black",
+	font :{
+		fontSize: 30
+	}
+}
+"#headliner":
+{
+	layout: "horizontal",
+	width: "100%",
+	left: 10,
+	height: 10,
+	top: 5
+	
+}
+"#line": {
+	width: "95%",
+	height: 2,
+	backgroundColor: "black"
+	
+}
+"#circle": {
+	width: 6,
+	height: 6,
+	borderRadius: 3,
+	backgroundColor: "black"
+}
 
-"label": {
-	color: "black"
+//list
+
+"#listLab" : {
+	top: 10,
+	left: 17,
+	color: "black",
+	font :{
+		fontSize: 30
+	}
 }

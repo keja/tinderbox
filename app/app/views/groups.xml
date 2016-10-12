@@ -1,3 +1,14 @@
 <Alloy>
-	<Label>Groups</Label>
+	<!-- <View id="header"></View> -->
+	<View id="headline">
+		<Label id="headlab">Groups</Label>
+		<View id="headliner">
+			<View id="circle"></View>
+			<View id="line"></View>
+		</View>
+		<View>
+			<Label id="listLab">LOL</Label>
+		</View>
+	</View>
+	
 </Alloy>

@@ -31,10 +31,6 @@
 	backgroundColor: "#fff9f4"
 }
 
-".hidden": {
-	display: "none"
-}
-
 //NAV
 
 "#nav": {
