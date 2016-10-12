@@ -1,49 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<<<<<<< HEAD
-<ti:app xmlns:ti="http://ti.appcelerator.org">
-    <id>com.tinderbox.grp</id>
-    <name>tinderbox</name>
-    <version>1.0</version>
-    <publisher>kenneth</publisher>
-    <url/>
-    <description>undefined</description>
-    <copyright>2016 by kenneth</copyright>
-    <icon>appicon.png</icon>
-    <fullscreen>true</fullscreen>
-    <navbar-hidden>true</navbar-hidden>
-    <analytics>true</analytics>
-    <guid>1dd09144-5365-4ba8-9111-abb970762cf4</guid>
-    <property name="ti.ui.defaultunit" type="string">dp</property>
-    <property name="run-on-main-thread" type="bool">true</property>
-    <ios>
-        <enable-launch-screen-storyboard>true</enable-launch-screen-storyboard>
-        <use-app-thinning>true</use-app-thinning>
-        <plist>
-            <dict>
-                <key>UISupportedInterfaceOrientations~iphone</key>
-                <array>
-                    <string>UIInterfaceOrientationPortrait</string>
-                </array>
-                <key>UISupportedInterfaceOrientations~ipad</key>
-                <array>
-                    <string>UIInterfaceOrientationPortrait</string>
-                    <string>UIInterfaceOrientationPortraitUpsideDown</string>
-                    <string>UIInterfaceOrientationLandscapeLeft</string>
-                    <string>UIInterfaceOrientationLandscapeRight</string>
-                </array>
-                <key>UIRequiresPersistentWiFi</key>
-                <false/>
-                <key>UIPrerenderedIcon</key>
-                <false/>
-                <key>UIStatusBarHidden</key>
-                <true/>
-                <key>UIStatusBarStyle</key>
-                <string>UIStatusBarStyleDefault</string>
-            </dict>
-        </plist>
-    </ios>
-    <android xmlns:android="http://schemas.android.com/apk/res/android"/>
-=======
 <ti:app 
   xmlns:ti="http://ti.appcelerator.org">
   <id>com.tinderbox.grp</id>
@@ -51,13 +6,13 @@
   <version>1.0</version>
   <publisher>kenneth</publisher>
   <url/>
-  <description>undefined</description>
+  <description/>
   <copyright>2016 by kenneth</copyright>
   <icon>appicon.png</icon>
   <fullscreen>true</fullscreen>
   <navbar-hidden>true</navbar-hidden>
   <analytics>true</analytics>
-  <guid>56779ff8-6c1c-4ce1-9bbb-f5dee09a1f59</guid>
+  <guid>de50d2ab-398e-4108-9555-f5dee09a1f59</guid>
   <property name="ti.ui.defaultunit" type="string">dp</property>
   <property name="run-on-main-thread" type="bool">true</property>
   <ios>
@@ -65,6 +20,8 @@
     <use-app-thinning>true</use-app-thinning>
     <plist>
       <dict>
+      	<key>NSLocationAlwaysUsageDescription</key>
+      	<string>Show your loction on the map, so your friends can find you.</string>
         <key>UISupportedInterfaceOrientations~iphone</key>
         <array>
           <string>UIInterfaceOrientationPortrait</string>
@@ -87,9 +44,14 @@
       </dict>
     </plist>
   </ios>
-  <android 
-    xmlns:android="http://schemas.android.com/apk/res/android"/>
->>>>>>> beb56a7a51ea3db7beee090fb91007a8c2a9715b
+  <android xmlns:android="http://schemas.android.com/apk/res/android">
+    <manifest>
+            <application>
+                <!-- Replace "PASTE YOUR GOOGLE MAPS API KEY HERE" with the Google API key you obtained -->
+                <meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyBTtX9xGa2TNpQ_pone1iXKsJlJ0T726bs"/>
+            </application>
+        </manifest>
+        </android>
     <mobileweb>
       <precache/>
       <splash>
@@ -98,7 +60,10 @@
       </splash>
       <theme>default</theme>
     </mobileweb>
-    <modules/>
+    <modules>
+    	<module platform="iphone">ti.map</module>
+    	<module platform="android">ti.map</module>
+	</modules>
     <deployment-targets>
       <target device="android">true</target>
       <target device="ipad">false</target>
@@ -110,9 +75,5 @@
     <plugins>
       <plugin version="1.0">ti.alloy</plugin>
     </plugins>
-    <property name="appc-app-id" type="string">57fdf7a0c02209cc4aebed20</property>
-<<<<<<< HEAD
-</ti:app>
-=======
+    <property name="appc-app-id" type="string">57fe5354d69ba09a2641e8a8</property>
   </ti:app>
->>>>>>> beb56a7a51ea3db7beee090fb91007a8c2a9715b

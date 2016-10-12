@@ -1,16 +1,23 @@
 <Alloy>
-
-	<View id="header">
-   		<View class="header_left">
-   			<ImageView class="header_action" src="" />
-   		</View>
-   		<View class="header_center">
-   			<ImageView id="logo" />
-   		</View>
-		<View class="header_right">
-			<ImageView class="header_action" src="" />
+	<ScrollView id="innerview">
+	   <View id="header">
+	   		<View class="header_left">
+	   			
+	   		</View>
+	   		<View class="header_center">
+	   			<ImageView id="logo" />
+	   		</View>
+			<View class="header_right">
+				<ImageView class=""></ImageView>
+			</View>
 		</View>
-	</View>
+		<View layout="vertical">
 
-	<Label>Map</Label>
+			
+			
+			<View id="map_view" module="ti.map">
+				<Annotation id="hest" myid="1" />
+			</View>
+		</View>  
+  </ScrollView> 
 </Alloy>

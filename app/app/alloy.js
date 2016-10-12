@@ -1,3 +1,5 @@
+Alloy.Globals.Map = require('ti.map');
+
 //calculate layout heights
 Alloy.CFG.header_height = 30;
 Alloy.CFG.nav_height = 30;
@@ -16,4 +18,3 @@ Alloy.CFG.color_back = "#000000";
 Alloy.CFG.font_regular = "EvelethCleanThin";
 Alloy.CFG.font_bold = "EvelethCleanRegular";
 Alloy.CFG.font_brown = "Brown-Regular";
-
