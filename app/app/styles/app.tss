@@ -21,10 +21,29 @@
 //HEADER
 
 "#header": {
+	layout: "horizontal",
 	height: Alloy.CFG.header_height,
 	backgroundColor: Alloy.CFG.color_teal
 }
 
+<<<<<<< HEAD
+=======
+".header_left": {
+	width: "33%",
+	//backgroundColor: "yellow"
+}
+".header_center": {
+	layout: "vertical",
+	width: "33%",
+	verticalAlign:'center'
+
+}
+".header_right": {
+	
+	width: "33%",
+	//backgroundColor: "blue"
+}
+>>>>>>> beb56a7a51ea3db7beee090fb91007a8c2a9715b
 "#logo": {
 	image: "logo.png"
 }
@@ -35,6 +54,14 @@
 	height: Alloy.CFG.view_height,
 	backgroundColor: Alloy.CFG.color_beige,
 	layout: "vertical"
+<<<<<<< HEAD
+=======
+}
+
+"#innerview": {
+	width: "100%",
+	height: "100%"
+>>>>>>> beb56a7a51ea3db7beee090fb91007a8c2a9715b
 }
 
 //NAV
@@ -55,15 +82,24 @@
 
 ".tab_img": {
 	top: 6,
+<<<<<<< HEAD
 	width: 15
+=======
+	width: 15,
+	tintColor: Alloy.CFG.color_white
+>>>>>>> beb56a7a51ea3db7beee090fb91007a8c2a9715b
 }
 ".tab_lbl": {
 	color: Alloy.CFG.color_white,
 	font: {
 		fontSize: 6
-	}
+	} 
 }
 ".active": {
+<<<<<<< HEAD
+=======
+	tintColor: Alloy.CFG.color_yellow,
+>>>>>>> beb56a7a51ea3db7beee090fb91007a8c2a9715b
 	color: Alloy.CFG.color_yellow,
 	font: {
 		fontSize: 6

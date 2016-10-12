@@ -32,6 +32,6 @@
 				</ListView>
 			</View>
 		
-		</View>
-   </ScrollView>
+		</View>  
+  </ScrollView> 
 </Alloy>

@@ -19,8 +19,7 @@ var views = {
 			$.addClass($[element.id], "active");
 		});
 	},
-
-	_show: function(v){
+		_show: function(v){
 		$.view.removeAllChildren();//remove all content from view
 		$.view.add([ controllers[v].getView() ]);//add new content to the view
 		views._setActiveMenu(v); //highligth selected menu item at the bottom
@@ -41,6 +40,7 @@ var views = {
 		views._show("more");	
 	}
 };
+
 
 
 $.index.addEventListener("open", views.groups); //make the default view = home

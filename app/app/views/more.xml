@@ -2,13 +2,18 @@
 	<ScrollView id="innerview">
 	   <View id="header">
 	   		<View class="header_left">
-	   			
-	   		</View>
+
+	   			<ImageView class="header_action" src="" />
+
+ 		</View>
 	   		<View class="header_center">
 	   			<ImageView id="logo" />
 	   		</View>
 			<View class="header_right">
+
 				<ImageView class=""></ImageView>
+
+				<ImageView class="header_action" src="" />
 			</View>
 		</View>
 		<View layout="vertical">

@@ -5,7 +5,9 @@
        </View>
        <View id="nav">
        		<View class="tab" id="tab_home" onClick="views.home">
-				<ImageView class="tab_img" image="matches.png" />
+       			
+				<ImageView class="tab_img" image="Home-100.png" />
+
 				<Label class="tab_lbl" text="Home" />	
 			</View>
 			<View class="tab" id="tab_groups" onClick="views.groups">
