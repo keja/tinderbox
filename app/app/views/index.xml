@@ -2,7 +2,8 @@
     <Window id="index">
        <View id="header"></View>
        <ScrollView id="view">
-       		<Require src="home"></Require>
+       		<!--<Require id="view_home" src="home" />
+       		<Require id="view_map" src="map" class="hidden" />-->
        </ScrollView>
        <View id="nav">
        		<View class="tab active">
@@ -17,7 +18,7 @@
 				<ImageView class="tab_img" image="favorites.png" />
 				<Label class="tab_lbl" text="Schedule" />	
 			</View>
-			<View class="tab">
+			<View class="tab" onClick="showMap">
 				<ImageView class="tab_img" image="settings.png" />
 				<Label class="tab_lbl" text="Map" />	
 			</View>
