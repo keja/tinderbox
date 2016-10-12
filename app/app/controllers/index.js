@@ -4,19 +4,10 @@ var controllers = {
 	groups: Alloy.createController('groups'),
 	schedule: Alloy.createController('schedule')
 };
+
+
 var views = {
-	_setActiveMenu: function(v){
-		/*
-		var tabs = $.nav.children;
-		for (var i = 0 ; i < tabs.length; i++) {
-		    var tab = tabs[i].children;
-		    for (var i = 0 ; i < tab.length; i++) {
-		    	//$.removeClass(tab[i], "active");
-		    	console.log(tab[i]);
-		    } 
-		}
-		*/
-	}, 
+
 	_show: function(v){
 		$.view.removeAllChildren();//remove all content from view
 		$.view.add([ controllers[v].getView() ]);//add new content to the view
@@ -29,10 +20,10 @@ var views = {
 		views._show("home");
 	},
 	groups: function(){
-		//views._show("groups");
+		views._show("groups");
 	},
 	schedule: function(){
-		//views._show("schedule");
+		views._show("schedule");
 	},
 	
 	more: function(){
