@@ -1,7 +1,8 @@
 var controllers = {
 	home: Alloy.createController('home'),
 	map: Alloy.createController('map'),
-	groups: Alloy.createController('groups')
+	groups: Alloy.createController('groups'),
+	schedule: Alloy.createController('schedule')
 };
 var views = {
 	_setActiveMenu: function(v){
@@ -15,7 +16,7 @@ var views = {
 		    } 
 		}
 		*/
-	},
+	}, 
 	_show: function(v){
 		$.view.removeAllChildren();//remove all content from view
 		$.view.add([ controllers[v].getView() ]);//add new content to the view
@@ -28,7 +29,14 @@ var views = {
 		views._show("home");
 	},
 	groups: function(){
-		views._show("groups");
+		//views._show("groups");
+	},
+	schedule: function(){
+		//views._show("schedule");
+	},
+	
+	more: function(){
+		//laves på en anden måde end de andre views, da det er et overlay.
 	}
 };
 
