@@ -1,0 +1,19 @@
+"#Listlab": {
+		font: {
+		fontSize: 20,
+		fontFamily: Alloy.CFG.font_brown
+	}
+}
+"#Listlab2": {
+		font: {
+		fontSize: 20,
+		fontFamily: Alloy.CFG.font_brown
+	}
+}
+"#grouped": {
+	layout: "vertical",
+	font: {
+		fontSize: 20,
+		fontFamily: Alloy.CFG.font_brown
+	}
+}

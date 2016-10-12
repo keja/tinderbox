@@ -15,3 +15,4 @@ Alloy.CFG.color_back = "#000000";
 //fonts
 Alloy.CFG.font_regular = "EvelethCleanThin";
 Alloy.CFG.font_bold = "EvelethCleanRegular";
+Alloy.CFG.font_brown = "Brown-Regular";

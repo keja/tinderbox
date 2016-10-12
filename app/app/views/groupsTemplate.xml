@@ -1,0 +1,10 @@
+<Alloy>
+		<ItemTemplate name="groupsTemplate">
+			<View id="groupid">
+				<View id="grouped">
+					<Label bindId="groupname" id="Listlab"/>	
+					<Label bindId="numberOfPeople" id="Listlab2"/>
+				</View>
+			</View>					
+		</ItemTemplate>
+</Alloy>

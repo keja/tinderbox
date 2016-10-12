@@ -1,14 +1,37 @@
 <Alloy>
-	<!-- <View id="header"></View> -->
-	<View id="headline">
-		<Label id="headlab">Groups</Label>
-		<View id="headliner">
-			<View id="circle"></View>
-			<View id="line"></View>
+	<ScrollView id="innerview">
+	   <View id="header">
+	   		<View class="header_left">
+	   			
+	   		</View>
+	   		<View class="header_center">
+	   			<ImageView id="logo" />
+	   		</View>
+			<View class="header_right">
+				<ImageView class=""></ImageView>
+			</View>
 		</View>
-		<View>
-			<Label id="listLab">LOL</Label>
+		<View layout="vertical">
+			
+			<View id="headline">
+				<Label id="headlab">Groups</Label>
+				<View id="headliner">
+					<View id="circle"></View>
+					<View id="line"></View>
+				</View>
+				
+				<ListView defaultItemTemplate="groupsTemplate">
+					<Templates>
+						<Require src="groupsTemplate" />
+					</Templates>
+					<ListSection>
+						<ListItem class="itemlistheight" groupname:text="Do you like it?" numberOfPeople:text ="4"/>
+						<ListItem class="itemlistheight" groupname:text="Do you like it?" numberOfPeople:text ="4"/>
+						<ListItem class="itemlistheight" groupname:text="Or this one?" numberOfPeople:text ="4"/>
+					</ListSection>
+				</ListView>
+			</View>
+		
 		</View>
-	</View>
-	
+   </ScrollView>
 </Alloy>
