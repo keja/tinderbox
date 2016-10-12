@@ -1,12 +1,20 @@
-var views = {
-	
+var controllers = {
+	home: Alloy.createController('home'),
+	map: Alloy.createController('map')
 };
-var map = Alloy.createController('map').getView();
+var views = {
+	_show: function(v){
+		console.log("show " + v);
+		$.view.removeAllChildren();
+		$.view.add([ controllers[v].getView() ]);
+	},
+	map: function(){
+		views._show("map");
+	},
+	home: function(){
+		views._show("home");
+	}
+};
 
-function showMap(){
-	removeAllChildren($.view);
-	$.view.add([ map ]);
-	console.log("shop map");
-
-}
+$.index.addEventListener("open", views.home);
 $.index.open();
