@@ -55,15 +55,17 @@
 
 ".tab_img": {
 	top: 6,
-	width: 15
+	width: 15,
+	tintColor: Alloy.CFG.color_white
 }
 ".tab_lbl": {
 	color: Alloy.CFG.color_white,
 	font: {
 		fontSize: 6
-	}
+	} 
 }
 ".active": {
+	tintColor: Alloy.CFG.color_yellow,
 	color: Alloy.CFG.color_yellow,
 	font: {
 		fontSize: 6

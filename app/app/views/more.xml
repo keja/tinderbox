@@ -8,7 +8,7 @@
 	   			<ImageView id="logo" />
 	   		</View>
 			<View class="header_right">
-				<ImageView class=""></ImageView>
+				<ImageView class="header_action" src="" />
 			</View>
 		</View>
 		<View layout="vertical">
