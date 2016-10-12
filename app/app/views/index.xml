@@ -1,12 +1,12 @@
 <Alloy>
     <Window id="index">
-       <ScrollView id="view">
+       <View id="view">
    
-       </ScrollView>
+       </View>
        <View id="nav">
        		<View class="tab" id="tab_home" onClick="views.home">
-				<ImageView class="tab_img active" image="matches.png" />
-				<Label class="tab_lbl active" text="Home" />	
+				<ImageView class="tab_img" image="matches.png" />
+				<Label class="tab_lbl" text="Home" />	
 			</View>
 			<View class="tab" id="tab_groups" onClick="views.groups">
 				<ImageView class="tab_img" image="top_players.png" />

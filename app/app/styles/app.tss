@@ -5,7 +5,7 @@
 
 "View": { 
 	layout: "horizontal"
-}
+} 
 "ScrollView": {
 	layout: "vertical"
 }
@@ -13,7 +13,8 @@
 "Label": {
 	color: Alloy.CFG.color_black,
 	font: {
-		fontSize: "12px"
+		fontSize: 12,
+		fontFamily: Alloy.CFG.font_regular
 	}
 }
 
@@ -24,11 +25,16 @@
 	backgroundColor: Alloy.CFG.color_teal
 }
 
+"#logo": {
+	image: "logo.png"
+}
+
 //VIEW
 
 "#view": {
 	height: Alloy.CFG.view_height,
-	backgroundColor: Alloy.CFG.color_beige
+	backgroundColor: Alloy.CFG.color_beige,
+	layout: "vertical"
 }
 
 //NAV

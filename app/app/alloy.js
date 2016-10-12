@@ -11,3 +11,7 @@ Alloy.CFG.color_teal = "#043540";
 Alloy.CFG.color_rosa = "#f18879";
 Alloy.CFG.color_white = "#ffffff";
 Alloy.CFG.color_back = "#000000";
+
+//fonts
+Alloy.CFG.font_regular = "EvelethCleanThin";
+Alloy.CFG.font_bold = "EvelethCleanRegular";

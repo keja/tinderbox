@@ -1,3 +1,5 @@
 app/platform
 app/i18n
 app/tiapp.xml
+app/assets/android/fonts
+app/assets/iphone/fonts
