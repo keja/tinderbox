@@ -2,7 +2,8 @@ var controllers = {
 	home: Alloy.createController('home'),
 	map: Alloy.createController('map'),
 	groups: Alloy.createController('groups'),
-	schedule: Alloy.createController('schedule')
+	schedule: Alloy.createController('schedule'),
+	more: Alloy.createController("more")
 };
 
 
@@ -11,7 +12,7 @@ var views = {
 		//set all menues to inactive
 		$.nav.children.forEach(function(tab){
 			tab.children.forEach(function(element){
-				$.removeClass($[element.id], "active"); 
+				$.removeClass($[element.id], "active");
 			});
 		});
 		
@@ -19,7 +20,6 @@ var views = {
 		$["tab_"+v].children.forEach(function(element){
 			$.addClass($[element.id], "active");
 		});
-		
 	},
 	_show: function(v){
 		$.view.removeAllChildren();//remove all content from view
@@ -38,11 +38,10 @@ var views = {
 	schedule: function(){
 		views._show("schedule");
 	},
-	
 	more: function(){
-		//laves på en anden måde end de andre views, da det er et overlay.
+		views._show("more");	
 	}
 };
 
-$.index.addEventListener("open", views.home); //make the default view = home
+$.index.addEventListener("open", views.more); //make the default view = home
 $.index.open();

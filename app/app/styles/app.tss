@@ -1,6 +1,6 @@
 "Window": {
 	layout: "vertical",
-	backgroundColor: "#0e2040"
+	backgroundColor: Alloy.CFG.color_beige
 }
 
 "View": { 
@@ -11,7 +11,7 @@
 }
 
 "Label": {
-	color: "#fff",
+	color: Alloy.CFG.color_black,
 	font: {
 		fontSize: "12px"
 	}
@@ -21,18 +21,14 @@
 
 "#header": {
 	height: Alloy.CFG.header_height,
-	backgroundColor: "#043540"
+	backgroundColor: Alloy.CFG.color_teal
 }
 
 //VIEW
 
 "#view": {
 	height: Alloy.CFG.view_height,
-	backgroundColor: "#fff9f4"
-}
-
-".hidden": {
-	display: "none"
+	backgroundColor: Alloy.CFG.color_beige
 }
 
 //NAV
@@ -47,22 +43,22 @@
 	width: "20%",
 	height: "100%",
 	textAlign: "center",
-	backgroundColor: "#043540",
+	backgroundColor: Alloy.CFG.color_teal,
 	layout: "vertical"
 }
 
 ".tab_img": {
-	top: "20%",
+	top: 6,
 	width: 15
 }
 ".tab_lbl": {
-	color: "#fff",
+	color: Alloy.CFG.color_white,
 	font: {
 		fontSize: 6
 	}
 }
 ".active": {
-	color: "#ffd962",
+	color: Alloy.CFG.color_yellow,
 	font: {
 		fontSize: 6
 	}
