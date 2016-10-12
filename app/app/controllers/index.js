@@ -3,10 +3,22 @@ var controllers = {
 	map: Alloy.createController('map')
 };
 var views = {
+	_setActiveMenu: function(v){
+		/*
+		var tabs = $.nav.children;
+		for (var i = 0 ; i < tabs.length; i++) {
+		    var tab = tabs[i].children;
+		    for (var i = 0 ; i < tab.length; i++) {
+		    	//$.removeClass(tab[i], "active");
+		    	console.log(tab[i]);
+		    } 
+		}
+		*/
+	},
 	_show: function(v){
-		console.log("show " + v);
-		$.view.removeAllChildren();
-		$.view.add([ controllers[v].getView() ]);
+		$.view.removeAllChildren();//remove all content from view
+		$.view.add([ controllers[v].getView() ]);//add new content to the view
+		//views._setActiveMenu("home");
 	},
 	map: function(){
 		views._show("map");
@@ -16,5 +28,5 @@ var views = {
 	}
 };
 
-$.index.addEventListener("open", views.home);
+$.index.addEventListener("open", views.home); //make the default view = home
 $.index.open();
