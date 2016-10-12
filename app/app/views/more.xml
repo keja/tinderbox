@@ -1,0 +1,20 @@
+<Alloy>
+	<ScrollView id="innerview">
+	   <View id="header">
+	   		<View class="header_left">
+	   			
+	   		</View>
+	   		<View class="header_center">
+	   			<ImageView id="logo" />
+	   		</View>
+			<View class="header_right">
+				<ImageView class=""></ImageView>
+			</View>
+		</View>
+		<View layout="vertical">
+			
+			<Label>More</Label>
+		
+		</View>
+   </ScrollView>
+</Alloy>

@@ -1,4 +1,6 @@
 <Alloy>
+
 	<View id="header"></View>
+
 	<Label>Home</Label>
 </Alloy>

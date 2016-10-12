@@ -1,0 +1,7 @@
+"Label": {
+	layout: "vertical",
+	color: "#000",
+	font: {
+		fontSize: 20
+	}
+}

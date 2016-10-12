@@ -11,7 +11,7 @@
     <fullscreen>true</fullscreen>
     <navbar-hidden>true</navbar-hidden>
     <analytics>true</analytics>
-    <guid>a24e0154-a0c2-4567-9666-d1e63821d835</guid>
+    <guid>1dd09144-5365-4ba8-9111-abb970762cf4</guid>
     <property name="ti.ui.defaultunit" type="string">dp</property>
     <property name="run-on-main-thread" type="bool">true</property>
     <ios>
@@ -62,5 +62,5 @@
     <plugins>
         <plugin version="1.0">ti.alloy</plugin>
     </plugins>
-    <property name="appc-app-id" type="string">57fcda92af27226007e7e49a</property>
+    <property name="appc-app-id" type="string">57fdf7a0c02209cc4aebed20</property>
 </ti:app>
