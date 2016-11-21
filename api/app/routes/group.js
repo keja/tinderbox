@@ -24,6 +24,8 @@ module.exports = function(router, models) {
     //post args: [group_id: (int), member_id: (int)]
     router.route('/groups/join').post(function (req, res) {
 
+        //in the perfect world we should validate that the user_id exist and and also that the group_id exists and user not already in the group
+
         var query = {_id: req.body.group_id},
             doc = {$push: {"members": req.body.member_id}};
 
