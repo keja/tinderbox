@@ -12,15 +12,12 @@ module.exports = function(router, models) {
     //create new group
     //post args: [name: (string)]
     router.route('/groups/create').post(function (req, res) {
-        var group = new models.group();
-        group.name = req.body.name;
 
-        group.save(function (err) {
-            if (err) {
-                res.send(err);
-            }
-            res.json({message: 'Group created!'});
+        models.group.create({ name: req.body.name }, function (err, model) {
+            if (err) res.send(err);
+            res.json(model);
         });
+
     });
 
     //add member to group
