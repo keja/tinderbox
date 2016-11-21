@@ -29,9 +29,9 @@ module.exports = function(router, models) {
 
         models.group.update(query, doc, function (err, model) {
             if (err) {
-                res.send(err);
+                res.send({success: false, error: err});
             }
-            res.json(model);
+            res.json({success: true});
         });
         /*
          Group.findByIdAndUpdate(req.body.group_id,
@@ -57,9 +57,9 @@ module.exports = function(router, models) {
 
         models.group.update(query, doc, function (err, model) {
             if (err) {
-                res.send(err);
+                res.send({success: false, error: err});
             }
-            res.json(model);
+            res.json({success: true});
         });
     });
 };
