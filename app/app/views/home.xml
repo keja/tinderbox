@@ -1,14 +1,54 @@
 <Alloy>
-	<View id="header">
-   		<View class="header_left">
-   			<ImageView class="header_action" src="" />
-   		</View>
-   		<View class="header_center">
-   			<ImageView id="logo" />
-   		</View>
-		<View class="header_right">
-			<ImageView class="header_action" src="" />
+	<ScrollView id="innerview">
+	   <View id="header">
+	   		<View class="header_left">
+	   			
+	   		</View>
+	   		<View class="header_center">
+	   			<ImageView id="logo" />
+	   		</View>
+			<View class="header_right">
+				<ImageView class=""></ImageView>
+			</View>
 		</View>
-	</View>
-	<Label>Home</Label>
+		<View layout="vertical">
+			
+			<View id="topbar">
+				
+			</View>
+			
+			<View id="headline">
+				<Label id="headlab">My Stuff</Label>
+				<View id="headliner">
+					<View id="circle"></View>
+					<View id="line"></View>
+				</View>
+				<!--
+				<ListView defaultItemTemplate="scheduleTemplate">
+					<Templates> 
+						<Require src="groupsTemplate"/>
+					</Templates>
+					<ListSection>
+						<ListItem title:text="Notifications" template="subline"/>
+						<ListItem numberOfPeople:text="18:30 - Friday, Magicbox" class="itemlistheight" pic:image="djs/tiesto.jpeg" groupmember:text="Playing in 15 minutes" play3:image="icons/Cancel_red.png"/>
+						<ListItem numberOfPeople:text="Find a dry spot with the heatmap" class="itemlistheight" pic:image="rain.png" groupmember:text="Rain incomming" play2:image="icons/Map_Marker_green.png"play3:image="icons/Cancel_red.png"/>
+						
+						<ListItem title:text="Favorite Artists" template="subline"/>
+						<ListItem numberOfPeople:text="18:30 - Friday, Magicbox" class="itemlistheight" pic:image="djs/tiesto.jpeg" groupmember:text="Tiësto" play3:image="icons/Pin_green.png"play2:image="icons/Star_yellow.png"/>
+					
+						<ListItem title:text="Tinderbox Social Links" template="subline"/>
+						<ListItem template="image" pic:image="social.png" backgroundColor="transparent" height="50" />
+					</ListSection>
+					 
+				</ListView>
+				-->
+				<View id="main_content"></View>
+			</View>
+			
+			
+				 
+			
+			
+		</View>  
+  </ScrollView> 
 </Alloy>

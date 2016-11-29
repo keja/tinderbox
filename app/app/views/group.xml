@@ -1,4 +1,45 @@
 <Alloy>
-	<View id="header"></View>
-	<Label>Group</Label>
+	<ScrollView id="innerview">
+	   <View id="header">
+	   		<View class="header_left">
+	   			<ImageView image="icons/Back_white.png" class="header_action" left="10" id="btnBack" />
+	   		</View>
+	   		<View class="header_center">
+	   			<ImageView id="logo" />
+	   		</View>
+			<View class="header_right">
+				
+			</View>
+		</View>
+		<View layout="vertical">
+			
+			<View id="headline">
+				<Label id="headlab">Group Awsome</Label>
+				<View id="headliner">
+					<View id="circle"></View>
+					<View id="line"></View>
+				</View>
+	
+				<ListView defaultItemTemplate="artistTemplate">
+					<Templates>
+						<Require src="groupsTemplate"/>
+					</Templates>
+					<ListSection>
+						<ListItem title:text="Pinned Artist" template="subline"/>
+						<ListItem class="itemlistheight" pic:image="djs/meatloaf.jpeg" artist:text="Meat Loaf" grouplike:text="3 likes" numberOfPeople:text ="8 people" play:image="icons/Unpin_red.png"/>
+						<ListItem class="itemlistheight" pic:image="djs/zedsdead.png" artist:text="Zeds Dead" grouplike:text="4 likes" numberOfPeople:text ="8 people" play:image="icons/Unpin_red.png"/>
+						
+						<ListItem title:text="Group Members" template="subline"/>
+						<ListItem template="groupMemberTemplate" class="itemlistheight" pic:image="group/kenneth.png" groupmember:text="Kenneth Jakobsen" play3:image="icons/Near_Me_green.png"play2:image="icons/Cancel_red.png"/>
+						<ListItem template="groupMemberTemplate" class="itemlistheight" pic:image="group/thor.png" groupmember:text="Thor Döör" play3:image="icons/Near_Me_green.png"play2:image="icons/Cancel_red.png"/>
+						<ListItem template="groupMemberTemplate" class="itemlistheight" pic:image="group/anders.png" groupmember:text="Anders Pedersen" play3:image="icons/Near_Me_green.png"play2:image="icons/Cancel_red.png"/>
+						<ListItem template="groupMemberTemplate" class="itemlistheight" pic:image="group/christoffer.png" groupmember:text="Christoffer Vølund" play3:image="icons/Near_Me_green.png"play2:image="icons/Cancel_red.png"/>
+					</ListSection>
+					
+				</ListView>
+				
+			</View>
+		
+		</View>  
+  </ScrollView> 
 </Alloy>

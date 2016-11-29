@@ -1,19 +1,97 @@
+"#hehehe": {
+	height: "100%",
+	width: "100%"
+}
+
 "#Listlab": {
+	top: 3,
+	left: "15",
 		font: {
 		fontSize: 20,
 		fontFamily: Alloy.CFG.font_brown
 	}
 }
 "#Listlab2": {
+	left: "15",
+		font: {
+		fontSize: 14,
+		fontFamily: Alloy.CFG.font_brown
+	},
+	color: "#81979a"
+}
+"#Listlabname":  {
+	top: 10,
+	left: "15",
 		font: {
 		fontSize: 20,
 		fontFamily: Alloy.CFG.font_brown
 	}
 }
-"#grouped": {
-	layout: "vertical",
+"#title": {
+	top: 10,
+	left: 20,
+	backgroundColor: Alloy.CFG.color_beige,
 	font: {
-		fontSize: 20,
+		fontSize: 16,
 		fontFamily: Alloy.CFG.font_brown
 	}
 }
+"#sublinestyle": {
+	top: 5,
+	height: 30,
+	backgroundColor: Alloy.CFG.color_beige,
+}
+"#listlike": {
+	left: 100,
+		font: {
+		fontSize: 20,
+		fontFamily: Alloy.CFG.font_brown
+	},
+	color: "#ffdd6d"
+}
+"#groupid":{
+	width: "90%",
+	layout: "horizontal"
+}
+
+"#grouped": {
+	layout: "horizontal",
+	font: {
+		fontSize: 12,
+		fontFamily: Alloy.CFG.font_brown
+	}
+}
+"#textgroup": {
+	left: "0",
+	width: 240,
+	top: 15,
+	layout: "vertical"
+}
+"#picture": {
+	top: "15dp",
+	height: 40,
+	width: 40,
+	
+}
+"#picture2": {
+	top: 25,
+	left: 30,
+	width: 20,
+	height: 20,
+	tintColor: Alloy.CFG.color_white
+}
+"#picture3": {
+	top: 25,
+	left: 0,
+	width: 20,
+	height: 20,
+	tintColor: Alloy.CFG.color_white
+}
+"#picture4": {
+	top: 25,
+	left: 10,
+	width: 20,
+	height: 20,
+	tintColor: Alloy.CFG.color_white
+}
+

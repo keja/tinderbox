@@ -2,24 +2,44 @@
 	<ScrollView id="innerview">
 	   <View id="header">
 	   		<View class="header_left">
-
-	   			<ImageView class="header_action" src="" />
-
- 		</View>
+	   			
+	   		</View>
 	   		<View class="header_center">
 	   			<ImageView id="logo" />
 	   		</View>
 			<View class="header_right">
-
-				<ImageView class=""></ImageView>
-
-				<ImageView class="header_action" src="" />
+				
 			</View>
 		</View>
 		<View layout="vertical">
 			
-			<Label>More</Label>
-		
-		</View>
-   </ScrollView>
+
+			<View id="headline">
+				<Label id="headlab">More</Label>
+				<View id="headliner">
+					<View id="circle"></View>
+					<View id="line"></View>
+				</View>
+				
+				<ListView defaultItemTemplate="groupMemberTemplate">
+					<Templates> 
+						<Require src="groupsTemplate"/>
+					</Templates>
+					<ListSection>
+						<ListItem class="itemlistheight" pic:image="node.png" groupmember:text="Artists" />
+						<ListItem class="itemlistheight" pic:image="quiz.png" groupmember:text="Quiz" />
+						<ListItem class="itemlistheight" pic:image="news.png" groupmember:text="News" />
+						<ListItem class="itemlistheight" pic:image="information.png" groupmember:text="Information" />
+						<ListItem class="itemlistheight" pic:image="settings.png" groupmember:text="Settings" />
+					</ListSection>
+					 
+				</ListView>
+			</View>
+			
+			
+				 
+			
+			
+		</View>  
+  </ScrollView> 
 </Alloy>

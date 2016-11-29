@@ -8,16 +8,22 @@
 	   			<ImageView id="logo" />
 	   		</View>
 			<View class="header_right">
-				<ImageView class=""></ImageView>
+				<ImageView image="icons/Sorting_desc_white.png" class="header_action" />
 			</View>
 		</View>
 		<View layout="vertical">
-
-			
 			
 			<View id="map_view" module="ti.map">
+				<View id="headline">
+					<Label id="headlab">Map</Label>
+					<View id="headliner">
+						<View id="circle"></View>
+						<View id="line"></View>
+					</View>
+				</View>
 				<Annotation id="hest" myid="1" />
 			</View>
+			
 		</View>  
   </ScrollView> 
 </Alloy>

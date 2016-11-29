@@ -1,1 +1,15 @@
+".itemlistheight": {
+	height: 70,
+	width: "90%",
+	backgroundColor: Alloy.CFG.color_beige,
+	
+}
+"ListView": {
+	separatorColor: Alloy.CFG.color_beige,
+	backgroundColor: Alloy.CFG.color_beige,
+
+}
+"ListSection": {
+	backgroundColor: Alloy.CFG.color_beige
+}
 

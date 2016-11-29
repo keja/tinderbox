@@ -1,79 +1,79 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ti:app 
-  xmlns:ti="http://ti.appcelerator.org">
-  <id>com.tinderbox.grp</id>
-  <name>tinderbox</name>
-  <version>1.0</version>
-  <publisher>kenneth</publisher>
-  <url/>
-  <description/>
-  <copyright>2016 by kenneth</copyright>
-  <icon>appicon.png</icon>
-  <fullscreen>true</fullscreen>
-  <navbar-hidden>true</navbar-hidden>
-  <analytics>true</analytics>
-  <guid>de50d2ab-398e-4108-9555-f5dee09a1f59</guid>
-  <property name="ti.ui.defaultunit" type="string">dp</property>
-  <property name="run-on-main-thread" type="bool">true</property>
-  <ios>
-    <enable-launch-screen-storyboard>true</enable-launch-screen-storyboard>
-    <use-app-thinning>true</use-app-thinning>
-    <plist>
-      <dict>
-      	<key>NSLocationAlwaysUsageDescription</key>
-      	<string>Show your loction on the map, so your friends can find you.</string>
-        <key>UISupportedInterfaceOrientations~iphone</key>
-        <array>
-          <string>UIInterfaceOrientationPortrait</string>
-        </array>
-        <key>UISupportedInterfaceOrientations~ipad</key>
-        <array>
-          <string>UIInterfaceOrientationPortrait</string>
-          <string>UIInterfaceOrientationPortraitUpsideDown</string>
-          <string>UIInterfaceOrientationLandscapeLeft</string>
-          <string>UIInterfaceOrientationLandscapeRight</string>
-        </array>
-        <key>UIRequiresPersistentWiFi</key>
-        <false/>
-        <key>UIPrerenderedIcon</key>
-        <false/>
-        <key>UIStatusBarHidden</key>
-        <true/>
-        <key>UIStatusBarStyle</key>
-        <string>UIStatusBarStyleDefault</string>
-      </dict>
-    </plist>
-  </ios>
-  <android xmlns:android="http://schemas.android.com/apk/res/android">
-    <manifest>
+<ti:app xmlns:ti="http://ti.appcelerator.org">
+    <id>com.tinderbox.grp</id>
+    <name>tinderbox</name>
+    <version>1.0</version>
+    <publisher>kenneth</publisher>
+    <url/>
+    <description>undefined</description>
+    <copyright>2016 by kenneth</copyright>
+    <icon>appicon.png</icon>
+    <fullscreen>true</fullscreen>
+    <navbar-hidden>true</navbar-hidden>
+    <analytics>true</analytics>
+    <guid>de50d2ab-398e-4108-9555-f5dee09a1f59</guid>
+    <property name="ti.ui.defaultunit" type="string">dp</property>
+    <property name="run-on-main-thread" type="bool">true</property>
+    <ios>
+        <enable-launch-screen-storyboard>true</enable-launch-screen-storyboard>
+        <use-app-thinning>true</use-app-thinning>
+        <plist>
+            <dict>
+                <key>NSLocationAlwaysUsageDescription</key>
+                <string>Show your loction on the map, so your friends can find you.</string>
+                <key>UISupportedInterfaceOrientations~iphone</key>
+                <array>
+                    <string>UIInterfaceOrientationPortrait</string>
+                </array>
+                <key>UISupportedInterfaceOrientations~ipad</key>
+                <array>
+                    <string>UIInterfaceOrientationPortrait</string>
+                    <string>UIInterfaceOrientationPortraitUpsideDown</string>
+                    <string>UIInterfaceOrientationLandscapeLeft</string>
+                    <string>UIInterfaceOrientationLandscapeRight</string>
+                </array>
+                <key>UIRequiresPersistentWiFi</key>
+                <false/>
+                <key>UIPrerenderedIcon</key>
+                <false/>
+                <key>UIStatusBarHidden</key>
+                <true/>
+                <key>UIStatusBarStyle</key>
+                <string>UIStatusBarStyleDefault</string>
+            </dict>
+        </plist>
+    </ios>
+    <android xmlns:android="http://schemas.android.com/apk/res/android">
+        <manifest>
             <application>
                 <!-- Replace "PASTE YOUR GOOGLE MAPS API KEY HERE" with the Google API key you obtained -->
-                <meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyBTtX9xGa2TNpQ_pone1iXKsJlJ0T726bs"/>
+                <meta-data
+                    android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyBTtX9xGa2TNpQ_pone1iXKsJlJ0T726bs"/>
             </application>
         </manifest>
-        </android>
+    </android>
     <mobileweb>
-      <precache/>
-      <splash>
-        <enabled>true</enabled>
-        <inline-css-images>true</inline-css-images>
-      </splash>
-      <theme>default</theme>
+        <precache/>
+        <splash>
+            <enabled>true</enabled>
+            <inline-css-images>true</inline-css-images>
+        </splash>
+        <theme>default</theme>
     </mobileweb>
     <modules>
-    	<module platform="iphone">ti.map</module>
-    	<module platform="android">ti.map</module>
-	</modules>
+        <module platform="iphone">ti.map</module>
+        <module platform="android">ti.map</module>
+    </modules>
     <deployment-targets>
-      <target device="android">true</target>
-      <target device="ipad">false</target>
-      <target device="iphone">true</target>
-      <target device="mobileweb">false</target>
-      <target device="windows">false</target>
+        <target device="android">true</target>
+        <target device="ipad">false</target>
+        <target device="iphone">true</target>
+        <target device="mobileweb">false</target>
+        <target device="windows">false</target>
     </deployment-targets>
     <sdk-version>5.5.0.GA</sdk-version>
     <plugins>
-      <plugin version="1.0">ti.alloy</plugin>
+        <plugin version="1.0">ti.alloy</plugin>
     </plugins>
     <property name="appc-app-id" type="string">57fe5354d69ba09a2641e8a8</property>
-  </ti:app>
+</ti:app>

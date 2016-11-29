@@ -5,3 +5,9 @@
 		fontSize: 20
 	}
 }
+".itemlistheight": {
+	height: 60,
+	width: "90%",
+	backgroundColor: Alloy.CFG.color_beige,
+	
+}

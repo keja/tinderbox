@@ -1,18 +1,43 @@
 "#map_view" : {
+	zIndex: 2,
     region : {
-        latitude:55.38117,
-        longitude:10.34466,
+        latitude:55.382736,
+        longitude:10.340302,
         latitudeDelta:0.01,
         longitudeDelta:0.01,
-        zoom: 10
+        zoom: 8
     },
-    //mapType: Ti.Map.SATELLITE_TYPE,
+    mapType: Alloy.Globals.Map.SATELLITE_TYPE,
     userLocation: true
-},
+}
 "#hest" : {
-    latitude: 37.390749,
-    longitude: -122.081651,
+    latitude: 55.38117,
+    longitude: 10.34480,
     title: "Appcelerator Headquarters",
     subtitle: "Mountain View, CA",
     pincolor: Alloy.Globals.Map.ANNOTATION_RED
+}
+
+//overlay
+"#index": {
+	zIndex: 0
+}
+"#headline": {
+	zIndex: 10,	
+	top: 0
+}
+
+"Annotation": {
+	zIndex: 99
+}
+
+//make the headline white, not black as it is used as an overlay on the map.
+"#headlab" : {
+	color: Alloy.CFG.color_white
+}
+"#line": {
+	backgroundColor: Alloy.CFG.color_white
+}
+"#circle": {
+	backgroundColor: Alloy.CFG.color_white
 }

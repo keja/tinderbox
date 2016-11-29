@@ -2,9 +2,62 @@
 		<ItemTemplate name="groupsTemplate">
 			<View id="groupid">
 				<View id="grouped">
+					<ImageView id="picture" bindId="pic"/>
+					<View id="textgroup">
 					<Label bindId="groupname" id="Listlab"/>	
 					<Label bindId="numberOfPeople" id="Listlab2"/>
+					</View>
+					<ImageView id="picture2" bindId="play"/>
 				</View>
 			</View>					
 		</ItemTemplate>
+		<ItemTemplate name="artistTemplate">
+			<View id="groupid" >
+				<View id="grouped">
+					<ImageView id="picture" bindId="pic"/>
+					<View id="textgroup">
+					<Label bindId="artist" id="Listlab"><Label bindId="grouplike" id="listlike"/></Label>
+					<Label bindId="numberOfPeople" id="Listlab2"/>
+					</View>
+					<ImageView id="picture2" bindId="play"/>
+				</View>
+			</View>					
+		</ItemTemplate>
+		<ItemTemplate name="subline" id="sublinestyle">
+			<Label id="title" bindId="title"/>					
+		</ItemTemplate>
+		<ItemTemplate name="groupMemberTemplate">
+			<View id="groupid" >
+				<View id="grouped">
+					<ImageView id="picture" bindId="pic"/>
+					<View id="textgroup">
+					<Label bindId="groupmember" id="Listlabname"><Label bindId="grouplike" id="listlike"/></Label>
+					<Label bindId="numberOfPeople" id="Listlab2"/>
+					</View>
+					<ImageView id="picture3" bindId="play2"/>
+					<ImageView id="picture4" bindId="play3"/>
+				</View>
+			</View>					
+		</ItemTemplate>
+		<ItemTemplate name="scheduleTemplate">
+			<View id="groupid" >
+				<View id="grouped">
+					<ImageView id="picture" bindId="pic"/>
+					<View id="textgroup">
+					<Label bindId="groupmember" id="Listlab" />
+					<Label bindId="numberOfPeople" id="Listlab2"/>
+					</View>
+					<ImageView id="picture3" bindId="play2"/>
+					<ImageView id="picture4" bindId="play3"/>
+				</View>
+			</View>					
+		</ItemTemplate>
+		<ItemTemplate name="image"> 
+			<View id="groupid" class="bg">
+				<View id="grouped">
+					<ImageView bindId="pic" id="hehehe" />
+				</View>
+			</View>
+		</ItemTemplate>
+		
 </Alloy>

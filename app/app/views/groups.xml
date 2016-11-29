@@ -12,7 +12,7 @@
 			</View>
 		</View>
 		<View layout="vertical">
-			
+			 
 			<View id="headline">
 				<Label id="headlab">Groups</Label>
 				<View id="headliner">
@@ -20,14 +20,16 @@
 					<View id="line"></View>
 				</View>
 				
-				<ListView defaultItemTemplate="groupsTemplate">
+				<ListView defaultItemTemplate="groupsTemplate" id="clickme">
 					<Templates>
 						<Require src="groupsTemplate" />
 					</Templates>
-					<ListSection>
-						<ListItem class="itemlistheight" groupname:text="Do you like it?" numberOfPeople:text ="4"/>
-						<ListItem class="itemlistheight" groupname:text="Do you like it?" numberOfPeople:text ="4"/>
-						<ListItem class="itemlistheight" groupname:text="Or this one?" numberOfPeople:text ="4"/>
+					<ListSection >
+						<ListItem class="itemlistheight" pic:image="group/groupimage.png" groupname:text="Group Dynamite" numberOfPeople:text ="8 people" play:image="icons/Play_green.png"/>
+						<ListItem class="itemlistheight" pic:image="group/groupimage.png" groupname:text="Group Hamptons" numberOfPeople:text ="5 people" play:image="icons/Play_green.png"/>
+						<ListItem class="itemlistheight" pic:image="group/groupimage.png" groupname:text="Group Awsome" numberOfPeople:text ="4 people" play:image="icons/Play_green.png"/>
+						<ListItem class="itemlistheight" pic:image="group/groupimage.png" groupname:text="The Hill Billies" numberOfPeople:text ="12 people" play:image="icons/Play_green.png"/>
+						<ListItem class="itemlistheight" pic:image="group/groupimage.png" groupname:text="Group Dynamo" numberOfPeople:text ="2 people" play:image="icons/Play_green.png"/>
 					</ListSection>
 				</ListView>
 			</View>

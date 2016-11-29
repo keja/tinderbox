@@ -1,0 +1,49 @@
+"Window": {
+	zIndex: 0
+}
+
+"#topbar": {
+	top: 0,
+	backgroundImage: "hometop.png",
+	height: 100,
+	zIndex: 1,
+	backgroundColor: "transparent"
+}
+
+
+"Label": {
+	top: 0,
+	zIndex: 4
+} 
+
+"#tb_1": {
+	width: "100%",
+	textAlign: "center",
+	color: Alloy.CFG.color_white,
+	font: {
+		fontSize: 30,
+		fontFamily: Alloy.CFG.font_brown,
+	},
+	left: "-10%"
+} 
+
+"#tb_2": {
+	color: Alloy.CFG.color_rosa,
+	font: {
+		fontSize: 30,
+		fontFamily: Alloy.CFG.font_brown,
+	},
+	left: "73%"
+}
+
+"#text": {
+	top: 0,
+	zIndex: 2,
+	width: "100%",
+	textAlign: "center"
+}
+
+"#btn": {
+	top: 5,
+	zIndex: 2
+}

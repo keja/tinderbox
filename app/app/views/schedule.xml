@@ -1,5 +1,42 @@
 <Alloy>
-	<View id="header"></View>
-	<View class="container">
-	</View>
+	<ScrollView id="innerview">
+	   <View id="header">
+	   		<View class="header_left">
+	   			
+	   		</View>
+	   		<View class="header_center">
+	   			<ImageView id="logo" />
+	   		</View>
+			<View class="header_right">
+				<!--<ImageView image="icons/Back_white.png" class="header_action" left="10" id="btnBack" />-->
+			</View>
+		</View>
+		<View layout="vertical">
+			
+			<View id="headline">
+				<Label id="headlab">Schedule</Label>
+				<View id="headliner">
+					<View id="circle"></View>
+					<View id="line"></View>
+				</View>
+	
+				<ListView defaultItemTemplate="scheduleTemplate">
+					<Templates>
+						<Require src="groupsTemplate"/>
+					</Templates>
+					<ListSection>
+						<ListItem title:text="Thursday" template="subline"/>
+						<ListItem numberOfPeople:text="14:00 - 15:00, MagicBox" class="itemlistheight" pic:image="djs/tiesto.jpeg" groupmember:text="Tiësto" play3:image="icons/Pin_green.png"play2:image="icons/Star_yellow.png"/>
+						<ListItem numberOfPeople:text="15:00 - 16:00, MagicBox" class="itemlistheight" pic:image="djs/deadmou5.jpeg" groupmember:text="Deadmou5" play3:image="icons/Pin_green.png"play2:image="icons/Star_yellow.png"/>
+						<ListItem title:text="Friday" template="subline"/>
+						<ListItem numberOfPeople:text="17:00 - 18:00, MagicBox" class="itemlistheight" pic:image="djs/afrojack.jpeg" groupmember:text="Afrojack" play3:image="icons/Pin_green.png"play2:image="icons/Star_yellow.png"/>
+						<ListItem numberOfPeople:text="18:00 - 19:00, MagicBox" class="itemlistheight" pic:image="djs/axwell.jpeg" groupmember:text="Axwell" play3:image="icons/Pin_green.png"play2:image="icons/Star_yellow.png"/>
+					</ListSection>
+					 
+				</ListView>
+				
+			</View>
+		
+		</View>  
+  </ScrollView> 
 </Alloy>

@@ -28,18 +28,21 @@
 
 
 ".header_left": {
+	top: 8,
 	width: "33%",
 	//backgroundColor: "yellow"
 }
 ".header_center": {
+	top: 8,
 	layout: "vertical",
 	width: "33%",
 	verticalAlign:'center'
 
 }
 ".header_right": {
-	
+	top: 8,
 	width: "33%",
+	right: 0
 	//backgroundColor: "blue"
 }
 
@@ -47,7 +50,12 @@
 	image: "logo.png"
 }
 
-//VIEW
+".header_action": {
+	height: 14
+}
+
+
+//VIEW 
 
 "#view": {
 	height: Alloy.CFG.view_height,
@@ -78,19 +86,71 @@
 
 ".tab_img": {
 	top: 6,
-	width: 15,
+	width: 12,
 	tintColor: Alloy.CFG.color_white
 }
 ".tab_lbl": {
+	top: 4,
 	color: Alloy.CFG.color_white,
 	font: {
-		fontSize: 6
-	} 
+		fontSize: 5
+	}  
 }
 ".active": {
 	tintColor: Alloy.CFG.color_yellow,
 	color: Alloy.CFG.color_yellow,
 	font: {
-		fontSize: 6
+		fontSize: 5
 	}
+}
+
+//HEADLINE + LINE/CIRCLE
+"#headline" : {
+        layout: "vertical"
+}
+"#headlab" : {
+        top: 20,
+        left: 17,
+        color: "black",
+        font :{
+                fontSize: 30,
+                fontFamily: Alloy.CFG.font_bold
+        }
+}
+"#headliner":
+{
+        layout: "horizontal",
+        width: "100%",
+        left: 10,
+        height: 10,
+        top: 5
+
+}
+"#line": {
+        width: "95%",
+        height: 2,
+        backgroundColor: "black"
+
+}
+"#circle": {
+        width: 6,
+        height: 6, 
+        borderRadius: 3,
+        backgroundColor: "black"
+}
+
+//LISTS
+".itemlistheight": {
+	height: 70,
+	width: "90%",
+	backgroundColor: Alloy.CFG.color_beige,
+	
+}
+"ListView": {
+	separatorColor: Alloy.CFG.color_beige,
+	backgroundColor: Alloy.CFG.color_beige,
+
+}
+"ListSection": {
+	backgroundColor: Alloy.CFG.color_beige
 }

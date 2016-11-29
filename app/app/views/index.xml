@@ -6,26 +6,26 @@
        <View id="nav">
        		<View class="tab" id="tab_home" onClick="views.home">
        			
-				<ImageView class="tab_img" image="Home-100.png" />
+				<ImageView class="tab_img" image="icons/Home.png" />
 
 				<Label class="tab_lbl" text="Home" />	
 			</View>
 			<View class="tab" id="tab_groups" onClick="views.groups">
-				<ImageView class="tab_img" image="top_players.png" />
+				<ImageView class="tab_img" image="icons/Group_Background_Selected.png" />
 				<Label class="tab_lbl" text="Groups" />	
 			</View>
 			<View class="tab" id="tab_schedule" onClick="views.schedule">
-				<ImageView class="tab_img" image="favorites.png" />
+				<ImageView class="tab_img" image="icons/Calendar.png" />
 				<Label class="tab_lbl" text="Schedule" />	
 			</View>
 			<View class="tab" id="tab_map" onClick="views.map">
-				<ImageView class="tab_img" image="settings.png" />
+				<ImageView class="tab_img" image="icons/Map_Marker.png" />
 				<Label class="tab_lbl" text="Map" />	
 			</View> 
 			<View class="tab" id="tab_more" onClick="views.more">
-				<ImageView class="tab_img" image="settings.png" />
+				<ImageView class="tab_img" image="icons/Menu.png" />
 				<Label class="tab_lbl" text="More" />	
-			</View>		
+			</View>		 
        </View>
     </Window>
 </Alloy>
