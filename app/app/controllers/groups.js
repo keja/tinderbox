@@ -1,5 +1,7 @@
 var args = $.args,
-	REST = require("rest");
+	REST = require("rest"),
+	dialog = require('editdialog');
+	
 
 //LIST ALL GROUPS
 function listAllGroups(){
@@ -50,27 +52,38 @@ listAllGroups(); // - this is a function as we want to call it later as well
 
 //CREATE NEW GROUP
 function new_group(){
-	var data = JSON.stringify({
-		name: "hey" //TODO: make dialog for user input
-	});
-	REST.POST( REST.endpoint("/groups/create"), data, function(res){
-		console.log(res);
-		if(res.status === 200 && res.result == "success"){
-			var data = JSON.parse(res.data); 
-			//join group with id data._id
-			var join_data = JSON.stringify({
-				group_id: data._id,
-				member_id: Alloy.CFG.FB_ID
-			}); 
-			REST.POST( REST.endpoint("/groups/join"), join_data, function(res){
-				
+	
+	dialog.show({
+    	hint        : "Enter group name",
+    	closeButton : "Close",
+    	text		: "",
+    	callback    : function(text){ 
+    		var data = JSON.stringify({
+				name: text
 			});
-			
-			//load group with id: data._id
-		}else{
-			alert("Failed to create the group");
-		} 
+			REST.POST( REST.endpoint("/groups/create"), data, function(res){
+				if(res.status === 200 && res.result == "success"){
+					var data = JSON.parse(res.data); 
+					//join group with id data._id
+					var join_data = JSON.stringify({
+						group_id: data._id,
+						member_id: Alloy.CFG.FB_ID
+					}); 
+					REST.POST( REST.endpoint("/groups/join"), join_data, function(res){
+						listAllGroups();
+						Alloy.CFG.views.group( data._id );
+					});
+					
+					//load group with id: data._id
+				}else{
+					alert("Failed to create the group"); 
+				} 
+			});
+    	}//callback end
 	});
+	
+	
+	
 }
 
 
