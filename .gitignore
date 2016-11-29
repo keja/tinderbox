@@ -3,3 +3,4 @@ app/i18n
 app/tiapp.xml
 app/assets/android/fonts
 app/assets/iphone/fonts
+/api/node_modules/
