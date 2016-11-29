@@ -16,6 +16,7 @@ Alloy.CFG.color_teal = "#043540";
 Alloy.CFG.color_rosa = "#f18879";
 Alloy.CFG.color_white = "#ffffff";
 Alloy.CFG.color_black = "#000000";
+Alloy.CFG.color_grey = "#80000000"; //black with 50% opacity
 
 //fonts
 Alloy.CFG.font_regular = "EvelethCleanThin";
@@ -26,8 +27,8 @@ Alloy.CFG.font_brown = "Brown-Regular";
 function generateTemplate(item, index){
 	var container = Ti.UI.createView({
 		layout: "horizontal",
-		height: "65dp",
-		backgroundColor: "#fff9f4",
+		height: "65dp", 
+		backgroundColor: Alloy.CFG.color_beige,
 		top: index * 65
 	});
 	
@@ -64,7 +65,7 @@ function generateTemplate(item, index){
 		top: "12dp",
 		left: "10dp",
 		font: {
-			fontSize: "18dp",
+			fontSize: "12dp",
 			fontFamily: Alloy.CFG.font_bold
 		}
 	});
@@ -72,7 +73,7 @@ function generateTemplate(item, index){
 	//create description element
 	var pref = {
 		top: "4dp",
-		color: "#8aa4a7",
+		color: Alloy.CFG.color_grey,
 		left: "10dp",
 		font : {
 			fontSize: "12dp",

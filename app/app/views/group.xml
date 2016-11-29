@@ -14,7 +14,7 @@
 		<View layout="vertical">
 			
 			<View id="headline">
-				<Label id="headlab">Group Awsome</Label>
+				<Label id="headlab">loading..</Label>
 				<View id="headliner">
 					<View id="circle"></View>
 					<View id="line"></View>

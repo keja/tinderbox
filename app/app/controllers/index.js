@@ -86,9 +86,7 @@ var views = {
 	group: function(group_id){
 		//make new instance with correct group id
 		if(group_id){
-			console.log("before new controller");
 			controllers.group = Alloy.createController("group", {group_id: group_id});
-			console.log("after new controller");
 		}  
 				 
         $.view.removeAllChildren();//remove all content from view
