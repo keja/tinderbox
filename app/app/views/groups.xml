@@ -19,7 +19,7 @@
 					<View id="circle"></View>
 					<View id="line"></View>
 				</View>
-				
+				<!--
 				<ListView defaultItemTemplate="groupsTemplate" id="clickme">
 					<Templates>
 						<Require src="groupsTemplate" />
@@ -32,6 +32,8 @@
 						<ListItem class="itemlistheight" pic:image="group/groupimage.png" groupname:text="Group Dynamo" numberOfPeople:text ="2 people" play:image="icons/Play_green.png"/>
 					</ListSection>
 				</ListView>
+				-->
+				<View id="main_content"></View>
 			</View>
 		
 		</View>  

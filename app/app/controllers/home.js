@@ -1,6 +1,6 @@
 // Arguments passed into this controller can be accessed via the `$.args` object directly or:
-var args = $.args;
-
+var args = $.args,
+	REST = require("rest"); 
 
 var notifications = [
     { 
@@ -13,7 +13,7 @@ var notifications = [
     			args: true,
     			event: function(ele, notification){
     				//Alloy.CFG.views.map();
-    				$.icon = "icons/Unpin.png";
+    				//$.icon = "icons/Unpin.png";
     				console.log(ele, notification);
     			} 
     		}
