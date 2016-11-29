@@ -91,24 +91,25 @@ function generateTemplate(item, index){
 		width: "50dp",
 		layout: "horizontal",
 		top: 22,
-		left: 0
+		left: 0,
 	});
 	//if any actions then add them to the actions container
 	if(item.actions && item.actions.length){
 		item.actions.forEach(function(action_item){
 			//if acction has an image, create a image view for it
-			if(action_item.image){
+			if(action_item.icon){
 				var a = Ti.UI.createImageView({
+					id: "icon",
 					image: action_item.icon,
 					height: "20",
-					width: "20"
+					width: "20",
 				});
 				if(action_item.event){
 					a.addEventListener("click", function(){
 						if(action_item.args){
-							action_item.event(action_item);
+							action_item.event(container, item);
 						}else{
-							action_item.event();
+							action_item.event(container);
 						}
 					});
 				}
@@ -138,4 +139,5 @@ function addTemplates(items, target){
 	target.add(list); 
 }
 
+//explose the addTemplaes gobally
 Alloy.CFG.addTemplates = addTemplates;

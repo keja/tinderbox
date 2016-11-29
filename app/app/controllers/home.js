@@ -6,17 +6,21 @@ var notifications = [
     { 
     	title: 'Alan Walker', 
     	description: "18:30 Friday, Magic Box", 
-    	image: "djs/afrojack.jpeg", 
-    	
+    	image: "http://goodkarmadjs.com/wp-content/uploads/2013/04/DJ-ez0.jpg", 	
     	actions: [
-    		{ icon: "icons/Star.png", event: test, args: true }
+    		{ 
+    			icon:"icons/Star_yellow.png", 
+    			args: true,
+    			event: function(ele, notification){
+    				//Alloy.CFG.views.map();
+    				$.icon = "icons/Unpin.png";
+    				console.log(ele, notification);
+    			} 
+    		}
     	]
     	
     }
 ];
 
-function test(){
-	alert("test");
-}
-
+//add generate from the notifications and add the template-items into main_content
 Alloy.CFG.addTemplates(notifications, $.main_content);
