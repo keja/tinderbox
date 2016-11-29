@@ -1,7 +1,8 @@
 var args = $.args,
+
 	REST = require("rest");
 
-REST.GET( REST.endpoint("/groups"), function(res){
+REST.GET( REST.endpoint("/groups"), function(res){ 
 	var groups = [];
 	
 	if(res.status === 200){

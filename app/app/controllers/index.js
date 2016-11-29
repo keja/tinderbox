@@ -92,4 +92,5 @@ var views = {
 
 $.index.addEventListener("open", views.home); //make the default view = home
 $.index.open();
+
 Alloy.CFG.views = views;
