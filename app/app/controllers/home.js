@@ -2,21 +2,21 @@
 var args = $.args;
 
 
-
 var notifications = [
     { 
     	title: 'Alan Walker', 
     	description: "18:30 Friday, Magic Box", 
     	image: "djs/afrojack.jpeg", 
-    	/*
+    	
     	actions: [
-    		{ icon: "icons/Star.png", event: test, args: true },
-    		{ icon: "icons/Play.png", event: "y", args: false }
+    		{ icon: "icons/Star.png", event: test, args: true }
     	]
-    	*/
+    	
     }
 ];
 
+function test(){
+	alert("test");
+}
 
-
-addTemplates(notifications);
+Alloy.CFG.addTemplates(notifications, $.main_content);
