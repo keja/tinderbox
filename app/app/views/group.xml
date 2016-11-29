@@ -1,5 +1,5 @@
 <Alloy>
-	<ScrollView id="innerview">
+	<View id="innerview">
 	   <View id="header">
 	   		<View class="header_left">
 	   			<ImageView image="icons/Back_white.png" class="header_action" left="10" id="btnBack" />
@@ -19,7 +19,7 @@
 					<View id="circle"></View>
 					<View id="line"></View>
 				</View>
-	
+				<!--
 				<ListView defaultItemTemplate="artistTemplate">
 					<Templates>
 						<Require src="groupsTemplate"/>
@@ -37,9 +37,10 @@
 					</ListSection>
 					
 				</ListView>
-				
+				-->
+				<ScrollView id="main_content" scrollType='vertical'></ScrollView>
 			</View>
 		
 		</View>  
-  </ScrollView> 
+  </View> 
 </Alloy>

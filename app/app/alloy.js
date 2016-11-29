@@ -1,5 +1,8 @@
 Alloy.Globals.Map = require('ti.map');
 
+//OBS - change this id to your own facebook account id ( http://findmyfbid.com/ )
+Alloy.CFG.FB_ID = 786782205;
+
 //calculate layout heights
 Alloy.CFG.header_height = 30;
 Alloy.CFG.nav_height = 30;
@@ -30,12 +33,11 @@ function generateTemplate(item, index){
 	
 	//if there is only on click event, add it to entire row.
 	if(item.actions && item.actions.length === 1){
-		var itm = item.actions[0];
 		container.addEventListener("click", function(){
-			if(itm.args){
-				itm.event(itm);
+			if(item.actions[0].args){ 
+				item.actions[0].event(item);
 			}else{
-				itm.event();
+				item.actions[0].event();
 			}
 		});
 	}
@@ -63,7 +65,7 @@ function generateTemplate(item, index){
 		left: "10dp",
 		font: {
 			fontSize: "18dp",
-			fontFamily: "Eveleth_Clean_Regular"
+			fontFamily: Alloy.CFG.font_bold
 		}
 	});
 	
@@ -74,7 +76,7 @@ function generateTemplate(item, index){
 		left: "10dp",
 		font : {
 			fontSize: "12dp",
-			fontFamily: "brown-regular"
+			fontFamily: Alloy.CFG.font_brown
 		}
 	};
 	//if plain text use text or else use attributedString
@@ -103,13 +105,14 @@ function generateTemplate(item, index){
 					image: action_item.icon,
 					height: "20",
 					width: "20",
+					bubbleParent: false //as we sometimes have an action bound to the entire row, make sure not to pass event on to parrent if icon is clicked. (will result in the event firing twice)
 				});
 				if(action_item.event){
 					a.addEventListener("click", function(){
 						if(action_item.args){
-							action_item.event(container, item);
+							action_item.event(item);
 						}else{
-							action_item.event(container);
+							action_item.event();
 						}
 					});
 				}

@@ -1,5 +1,5 @@
 <Alloy>
-	<ScrollView id="innerview">
+	<View id="innerview">
 	   <View id="header">
 	   		<View class="header_left">
 	   			
@@ -8,7 +8,7 @@
 	   			<ImageView id="logo" />
 	   		</View>
 			<View class="header_right">
-				<ImageView class=""></ImageView>
+				<ImageView image="icons/Plus Math.png" onClick="new_group" />
 			</View>
 		</View>
 		<View layout="vertical">
@@ -33,9 +33,9 @@
 					</ListSection>
 				</ListView>
 				-->
-				<View id="main_content"></View>
+				<ScrollView id="main_content" scrollType='vertical'></ScrollView>
 			</View>
 		
 		</View>  
-  </ScrollView> 
+  </View> 
 </Alloy>
