@@ -141,5 +141,10 @@ function addTemplates(items, target){
 	target.add(list); 
 }
 
+var daysInWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];	
+function zeropad(num){
+	return num > 9 ? num : "0" + num;
+}
+
 //explose the addTemplaes gobally
 Alloy.CFG.addTemplates = addTemplates;

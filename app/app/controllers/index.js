@@ -98,9 +98,67 @@ var views = {
 $.index.addEventListener("open", views.home); //make the default view = home
 $.index.open();
 
-//notifications
+//notifications 
+/*
+var test = 'raw',
+uri = 'wss://wss.websocketstest.com:443/service';
 
 
+	var WS = require('net.iamyellow.tiws').createWS();
 
+	WS.addEventListener('open', function () {
+		Ti.API.debug('ws opened');
+	});
+
+	WS.addEventListener('close', function (e) {
+		Ti.API.info("ws closed - code: " + e.code + " reason: " + e.reason);
+	});
+
+	WS.addEventListener('error', function (e) {
+		Ti.API.error("Got error: " + e.error);
+	});
+
+    var proto_version;
+    var stream_cnt = 0;
+
+	WS.addEventListener('message', function (e) {
+		Ti.API.log("Got message: " + e.data);
+        arr = e.data.split(',',2);
+        cmd = arr[0];
+        response = arr[1];
+
+        if (cmd == 'connected') {
+          Ti.API.log("got response: " + response);
+          WS.send("version,");
+        }
+        else if (cmd == 'version') {
+          Ti.API.log("got response: " + response);
+          proto_version = response;
+          WS.send("echo,test message");
+        }
+        else if (cmd == 'echo' && response == 'test message') {
+          Ti.API.log("got response: " + response);
+          if (proto_version == 'hybi-draft-07') {
+            WS.send("ping,");
+          }
+          else {
+            WS.send("timer,");
+          }
+        }
+        else if (cmd == 'time') {
+          stream_cnt = stream_cnt + 1;
+          Ti.API.log("got response: " + response);
+          if (stream_cnt == 4) {
+            WS.reconnect(uri, ["echo-protocol", "other-proto"]);
+          }
+          else if (stream_cnt > 5) {
+            WS.close();
+            alert('looks good');
+          }
+        }
+	});
+
+	WS.open(uri, ["echo-protocol", "other-proto"]);
+*/
 
 Alloy.CFG.views = views;

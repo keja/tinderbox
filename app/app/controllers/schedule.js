@@ -1,10 +1,7 @@
 var args = $.args,
 	REST = require("rest");
 	
-var daysInWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];	
-function zeropad(num){
-	return num > 9 ? num : "0" + num;
-}
+
 //LIST ALL ARTISTS
 function listAllArtists(){
 	REST.GET( REST.endpoint("/artists"), function(res){ 
@@ -13,7 +10,7 @@ function listAllArtists(){
 		if(res.status === 200 && res.result == "success"){
 			var data = JSON.parse(res.data);
 			data.forEach(function(artist){
-				console.log(artist);
+				//console.log(artist);
 				var start = new Date(artist.time_start);
 				
 				
@@ -34,7 +31,7 @@ function listAllArtists(){
 						},
 						{ 
 							icon: "icons/Pin_green.png",
-							args: true, 
+							args: true,  
 							event: function(_artist){
 								var data = JSON.stringify({
 									artist_id: _artist.id,
