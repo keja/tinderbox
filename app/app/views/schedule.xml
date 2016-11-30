@@ -1,5 +1,5 @@
 <Alloy>
-	<ScrollView id="innerview">
+	<View id="innerview">
 	   <View id="header">
 	   		<View class="header_left">
 	   			
@@ -39,5 +39,5 @@
 			</View>
 		
 		</View>  
-  </ScrollView> 
+  </View> 
 </Alloy>

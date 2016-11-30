@@ -21,21 +21,37 @@ function listAllArtists(){
 					id: artist._id,
 					image: artist.image, 
 					title: artist.name,
-					description: start.getHours() + ":" + zeropad(start.getMinutes()) + " " + daysInWeek[start.getDay()] + ", " + artist.stage, //artist.description,
+					description: start.getHours() + ":" + zeropad(start.getMinutes()) + " " + daysInWeek[start.getDay()] + ", " + artist.stage,
 					actions: [ 
 						{ 
-							icon: "icons/Info.png",
+							icon: "icons/Star_yellow.png",
 							args: true, 
-							event: function(group){
+							event: function(_artist){
+								
+								
 								//Alloy.CFG.views.group( group.id );
 							}
+						},
+						{ 
+							icon: "icons/Pin_green.png",
+							args: true, 
+							event: function(_artist){
+								var data = JSON.stringify({
+									artist_id: _artist.id,
+									user_id: Alloy.CFG.user_id
+								});
+								REST.POST( REST.endpoint("/user/pin-artist"), data, function(res){
+									alert(res);
+								});
+							}
 						}
+
 					]
 				});
 			});
 		}else{
-			artists.push({
-				title: "Failed to load groups",
+			artists.push({ 
+				title: "Failed to load schedule",
 				description: "try again later",
 				image: "icons/Error.png"
 			});
