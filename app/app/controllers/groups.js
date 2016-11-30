@@ -5,7 +5,6 @@ var args = $.args,
 
 //LIST ALL GROUPS
 function listAllGroups(){
-	$.main_content.text = "Loading";
 	REST.GET( REST.endpoint("/groups"), function(res){ 
 		var groups = [];
 	
@@ -64,17 +63,14 @@ function new_group(){
 			REST.POST( REST.endpoint("/groups/create"), data, function(res){
 				if(res.status === 200 && res.result == "success"){
 					var data = JSON.parse(res.data); 
-					//join group with id data._id
 					var join_data = JSON.stringify({
 						group_id: data._id,
-						member_id: Alloy.CFG.FB_ID
+						member_id: Alloy.CFG.user_id
 					}); 
 					REST.POST( REST.endpoint("/groups/join"), join_data, function(res){
-						listAllGroups();
-						Alloy.CFG.views.group( data._id );
+						listAllGroups(); //refresh the list of groups (download and re-render list)
+						Alloy.CFG.views.group( data._id ); //jump to the new group page
 					});
-					
-					//load group with id: data._id
 				}else{
 					alert("Failed to create the group"); 
 				} 

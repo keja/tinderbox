@@ -1,7 +1,7 @@
 Alloy.Globals.Map = require('ti.map');
 
 //OBS - change this id to your own facebook account id ( http://findmyfbid.com/ )
-Alloy.CFG.FB_ID = 786782205;
+Alloy.CFG.user_id = "583de09154514ff806000001";
 
 //calculate layout heights
 Alloy.CFG.header_height = 30;
@@ -133,9 +133,7 @@ function generateTemplate(item, index){
 	return container;
 }
 function addTemplates(items, target){
-	var list = Ti.UI.createScrollView({
-		layour: "vertical"
-	});
+	var list = Ti.UI.createScrollView();
 	items.forEach(function(task, index){
 		var template = generateTemplate(task, index);
 		list.add( template );

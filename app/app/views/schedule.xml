@@ -19,7 +19,7 @@
 					<View id="circle"></View>
 					<View id="line"></View>
 				</View>
-	
+				<!--
 				<ListView defaultItemTemplate="scheduleTemplate">
 					<Templates>
 						<Require src="groupsTemplate"/>
@@ -34,7 +34,8 @@
 					</ListSection>
 					 
 				</ListView>
-				
+				--> 
+				<ScrollView id="main_content" scrollType='vertical'></ScrollView>
 			</View>
 		
 		</View>  

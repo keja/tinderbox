@@ -32,7 +32,7 @@ var views = {
 		$.view.add([ controllers[v].getView() ]);//add new content to the view
 		views._setActiveMenu(v); //highligth selected menu item at the bottom
 	},
-	map: function(){
+	map: function(open){
 		views._show("map"); 
 		setTimeout(function(){
 			views._resetMenu();
