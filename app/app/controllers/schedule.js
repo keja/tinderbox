@@ -24,15 +24,6 @@ function listAllArtists(){
 							icon: "icons/Star_yellow.png",
 							args: true, 
 							event: function(_artist){
-								
-								
-								//Alloy.CFG.views.group( group.id );
-							}
-						},
-						{ 
-							icon: "icons/Pin_green.png",
-							args: true,  
-							event: function(_artist){
 								var data = JSON.stringify({
 									artist_id: _artist.id,
 									user_id: Alloy.CFG.user_id
@@ -40,6 +31,13 @@ function listAllArtists(){
 								REST.POST( REST.endpoint("/user/pin-artist"), data, function(res){
 									Alloy.CFG.views._reload("home");
 								});
+							}
+						},
+						{ 
+							icon: "icons/Pin_green.png",
+							args: true,  
+							event: function(_artist){
+								Alloy.createController('groupModal', { artist_id: _artist.id }).getView().open();
 							}
 						}
 

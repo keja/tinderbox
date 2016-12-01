@@ -4,45 +4,19 @@ var args = $.args,
 var Map = require('ti.map');
 
 var annotations = [];
-function showUsersOnMap(){
-	// Ti.API.info("showdiugsdo");
-	REST.GET( REST.endpoint("/user"), function(res){ 
-		var users = [];
+
+
+if(args && args.user){
+	console.log('fetch user location');
+	REST.GET(REST.endpoint("/user/locate/"+args.user), function(res){
+		var data = JSON.parse(res.data);
+		console.log(data);
+		createAnnotation(data, "");
 		
-		if(res.status === 200 && res.result == "success"){
-			var data = JSON.parse(res.data);
-			data.forEach(function(user){
-				
-				users.push({
-				id: user._id,
-				image: user.image	
-				});
-				//add members to map.
-				user.location = [{latitude: 55.383333}, {longitude: 10.339999}];
-				createAnnotation(user.location, "");
-			});
-		}
-		else{
-			
-		}
-		
-		if(args && args.user){
-			REST.GET(REST.endpoint("/user/locate/"+args.user), function(res){
-				var data = JSON.parse(res.data);
-				//Ti.API.info(data);
-				createAnnotation(data, "");
-				
-			});
-			
-		}
-		}, function(err){
-		Alloy.CFG.addTemplates([{
-				title: "Failed to connect to the tinderbox server",
-				image: "icons/Error.png"
-		}], $.main_content);
-	});			
+	});
+	
 }
-//d
+
 function updateUserLocation(){
 
 	var data = JSON.stringify({
@@ -55,28 +29,27 @@ function updateUserLocation(){
 }
 
 function showEvents(){
-	// //blue stage - hardcoded
-	// var blue = Map.createAnnotation({		    
-		    // latitude:55.382836,
-		    // longitude:10.338902,
-		    // pincolor:Map.ANNOTATION_PURPLE,
-		    // image: "icons/Error.png"
-		// });
-		// annotations.push(blue);
-// 		
-	// //red stage - hardcoded	
-	// var red = Map.createAnnotation({
-		    // latitude:55.381036,
-		    // longitude:10.340302,
-		    // pincolor:Map.ANNOTATION_RED,
-		    // image: "icons/Info.png"
-		// });
-		// annotations.push(red); 	
+	//blue stage - hardcoded
+	var blue = Map.createAnnotation({		    
+		    latitude:55.382836,
+		    longitude:10.338902,
+		    pincolor:Map.ANNOTATION_PURPLE,
+		    //image: "djs/afrojack.jpeg"
+		});
+		annotations.push(blue);
+		
+	//red stage - hardcoded	
+	var red = Map.createAnnotation({
+		    latitude:55.381036,
+		    longitude:10.340302,
+		    pincolor:Map.ANNOTATION_GREEN,
+		    //image: "djs/tiesto.jpeg"
+		});
+		annotations.push(red); 	
+		
+		setTimeout(function(){ $.map_view.setAnnotations(annotations); }, 1000);
 }
 
-function showUserOnMap(){
-	createAnnotation([{latitude: 55.382736}, {longitude: 10.340302}], "");
-}
 
 function createAnnotation(location, image){
 	//current location - hardcoded values that should come from phone gps
@@ -92,6 +65,7 @@ function createAnnotation(location, image){
 		});
 		
 		annotations.push(pin);
+		setTimeout(function(){ $.map_view.setAnnotations(annotations); }, 1000);
 }
 
 function createMap(){
@@ -99,18 +73,13 @@ function createMap(){
 		var region = {
 			latitude: 55.382736,
 			longitude: 10.340302,
-			latitudeDelta:0.01, longitudeDelta:0.01,
-			animate: true
+			latitudeDelta:0.01,  
+			longitudeDelta:0.01,
+			animate: true 
 		};
 
-		$.map_view.setLocation(region);
-		
-}
+		$.map_view.setLocation(region); 
+		setTimeout(function(){showEvents();}, 1000);
+} 
 createMap();
-showUserOnMap();
-showEvents();
-showUsersOnMap();
-$.map_view.addEventListener('click', function(e){
-			$.map_view.setAnnotations(annotations);
-		});
-
+setTimeout(function(){showEvents();}, 1000);

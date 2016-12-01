@@ -17,6 +17,6 @@
     backgroundColor : '#FFF'
 }
 
-"#user_list": { 
+"#group_list": { 
 	backgroundColor: Alloy.CFG.color_beige
 }

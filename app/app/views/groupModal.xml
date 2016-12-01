@@ -3,7 +3,7 @@
 				<View id="wrapperView">
 				<View id="backgroundView">
 					<View id="containerView">
-						<ScrollView id="user_list" scrollType='vertical'></ScrollView>
+						<ScrollView id="group_list" scrollType='vertical'></ScrollView>
 					</View>
 				</View>
 				</View>

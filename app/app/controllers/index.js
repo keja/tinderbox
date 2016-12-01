@@ -41,7 +41,11 @@ var views = {
 		}
 		
 	},
-	map: function(open){
+	map: function(event, open){
+		if(open){
+			controllers.map = Alloy.createController("map", { user: open });
+		}
+		
 		views._show("map"); 
 		setTimeout(function(){
 			views._resetMenu();

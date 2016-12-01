@@ -1,11 +1,11 @@
 Alloy.Globals.Map = require('ti.map');
 
-//OBS - change this id to your own facebook account id ( http://findmyfbid.com/ )
-Alloy.CFG.user_id = "583de09154514ff806000001";
+//pretent that we are logged in with facebook.
+Alloy.CFG.user_id = "5840a0efc855938458000001"; // "583de09154514ff806000001"; // <-- this is kennets id, one in use is mortens
 
 //calculate layout heights
 Alloy.CFG.header_height = 30;
-Alloy.CFG.nav_height = 30;
+Alloy.CFG.nav_height = 30; 
 Alloy.CFG.view_height = (Ti.Platform.displayCaps.platformHeight) - (Alloy.CFG.nav_height);
 
 //colors

@@ -11,10 +11,10 @@ function populateModal(){
 			data.forEach(function(user){
 				users.push({	
 					id: user._id,
-				image: user.image, //this should be generated server-side based on members facebook image.
-				title: user.name,
-				description: "Members: ",
-				actions: [
+					image: user.image, 
+					title: user.name,
+					description: "click here to add memeber",
+					actions: [
 							//Remove member from group
 							{ 
 								//icon: "icons/Cancel_red.png",

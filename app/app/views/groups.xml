@@ -8,10 +8,10 @@
 	   			<ImageView id="logo" />
 	   		</View>
 			<View class="header_right">
-				<ImageView image="icons/Plus Math.png" onClick="new_group" />
+				<ImageView image="icons/Plus_white.png" onClick="new_group" left="85" class="header_action" />
 			</View>
 		</View>
-		<View layout="vertical">
+		<View layout="vertical"> 
 			 
 			<View id="headline">
 				<Label id="headlab">Groups</Label>
@@ -22,7 +22,7 @@
 				<!--
 				<ListView defaultItemTemplate="groupsTemplate" id="clickme">
 					<Templates>
-						<Require src="groupsTemplate" />
+						<Require src="groupsTemplate" /> 
 					</Templates>
 					<ListSection >
 						<ListItem class="itemlistheight" pic:image="group/groupimage.png" groupname:text="Group Dynamite" numberOfPeople:text ="8 people" play:image="icons/Play_green.png"/>

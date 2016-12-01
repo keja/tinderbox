@@ -18,9 +18,25 @@ function showGroupMembers(group_id){
 	
 		if(res.status === 200 && res.result == "success"){
 			var data = JSON.parse(res.data);
+			console.log(data);
 			//update the name label in the view
 			$.headlab.text = data.name;
+			
+			if(data.artists && data.artists.length > 0){
+				data.artists.forEach(function(artist){
+					var start = new Date(artist.time_start); 
+					members.push({
+						id: artist._id,
+						image: artist.image, 
+						title: artist.name,
+						description: start.getHours() + ":" + zeropad(start.getMinutes()) + " " + daysInWeek[start.getDay()] + ", " + artist.stage,
+					});
+				});
+			}
+			
+			
 			if(data.members && data.members.length > 0){
+
 				data.members.forEach(function(member){
 	
 					members.push({
@@ -59,6 +75,7 @@ function showGroupMembers(group_id){
 					});
 				}); 
 			}
+	
 		}else{
 			groups.push({
 				title: "Failed to load groups",

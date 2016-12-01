@@ -1,5 +1,5 @@
 <Alloy>
-	<ScrollView id="innerview">
+	<View id="innerview">
 	   <View id="header">
 	   		<View class="header_left">
 	   			
@@ -8,7 +8,7 @@
 	   			<ImageView id="logo" />
 	   		</View>
 			<View class="header_right">
-				<ImageView image="icons/Sorting_desc_white.png" class="header_action" />
+				
 			</View>
 		</View>
 		<View layout="vertical">
@@ -16,7 +16,7 @@
 			<View id="map_view" module="ti.map">
 				<View id="headline">
 					<Label id="headlab">Map</Label>
-					<View id="headliner">
+					<View id="headliner"> 
 						<View id="circle"></View>
 						<View id="line"></View>
 					</View>
@@ -24,5 +24,5 @@
 			</View>
 			
 		</View>  
-  </ScrollView> 
+  </View> 
 </Alloy>
