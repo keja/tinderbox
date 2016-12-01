@@ -1,5 +1,5 @@
 <Alloy>
-	<ScrollView id="innerview">
+	<View id="innerview">
 	   <View id="header">
 	   		<View class="header_left">
 	   			
@@ -42,7 +42,7 @@
 					 
 				</ListView>
 				-->
-				<View id="main_content"></View>
+				<ScrollView id="main_content" refreshControl="views._reload"></ScrollView>
 			</View>
 			
 			
@@ -50,5 +50,5 @@
 			
 			
 		</View>  
-  </ScrollView> 
+  </View> 
 </Alloy>

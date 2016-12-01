@@ -68,7 +68,7 @@ function new_group(){
 						member_id: Alloy.CFG.user_id
 					}); 
 					REST.POST( REST.endpoint("/groups/join"), join_data, function(res){
-						listAllGroups(); //refresh the list of groups (download and re-render list)
+						Alloy.CFG.views._reload();  //refresh the list of groups (download and re-render list)
 						Alloy.CFG.views.group( data._id ); //jump to the new group page
 					});
 				}else{

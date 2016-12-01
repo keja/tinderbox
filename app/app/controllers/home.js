@@ -4,40 +4,48 @@ var args = $.args,
 
 
 
-
-var notifications = [];
-REST.GET( REST.endpoint("/user/personal-page/"+Alloy.CFG.user_id), function(res){
-	console.log(res);
-	var data = JSON.parse(res.data);
-	if(data){ 
-		data.artists.forEach(function(artist){
-			var start = new Date(artist.time_start);
-			
-			notifications.push({ 
-			title: artist.name, 
-			description: start.getHours() + ":" + zeropad(start.getMinutes()) + " " + daysInWeek[start.getDay()] + ", " + artist.stage,
-			image: artist.image, 	
-			actions: [
-				{ 
-					icon:"icons/Star_yellow.png", 
-					args: true,
-					event: function(ele, notification){
-						//Alloy.CFG.views.map();
-						//$.icon = "icons/Unpin.png";
-		    				console.log(ele, notification);
+function myPage(){
+	var notifications = [];
+	REST.GET( REST.endpoint("/user/personal-page/"+Alloy.CFG.user_id), function(res){
+		console.log(res);
+		var data = JSON.parse(res.data);
+		if(data){ 
+			data.artists.forEach(function(artist){
+				var start = new Date(artist.time_start);
+				
+				notifications.push({ 
+				id: artist._id,	
+				title: artist.name, 
+				description: start.getHours() + ":" + zeropad(start.getMinutes()) + " " + daysInWeek[start.getDay()] + ", " + artist.stage,
+				image: artist.image, 	
+				actions: [
+					{ 
+						icon:"icons/Cancel_red.png", 
+						args: true,
+						event: function(ele){
+							var data = JSON.stringify({
+								user_id: Alloy.CFG.user_id,
+								artist_id: ele.id
+							}); 
+							console.log(data);
+							REST.POST( REST.endpoint("/user/unpin-artist"), data, function(res){
+								Alloy.CFG.views._reload(); 
+							});
 		    			} 
 		    		}
-		    	]
-		    	
-		   });
-		}); 
-	}else{
+		    	] 
+			    	
+			   });
+			}); 
+		}else{
+			
+		}
 		
-	}
-	
-	Alloy.CFG.addTemplates(notifications, $.main_content);
-	
-});
+		Alloy.CFG.addTemplates(notifications, $.main_content);
+		
+	});
+}
+myPage();
 
 
  

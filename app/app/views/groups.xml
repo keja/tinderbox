@@ -33,7 +33,7 @@
 					</ListSection>
 				</ListView>
 				-->
-				<ScrollView id="main_content" scrollType='vertical'></ScrollView>
+				<ScrollView id="main_content" scrollType='vertical' refreshControl="views._reload"></ScrollView>
 			</View>
 		
 		</View>  

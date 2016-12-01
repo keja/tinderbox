@@ -38,7 +38,7 @@ function listAllArtists(){
 									user_id: Alloy.CFG.user_id
 								});
 								REST.POST( REST.endpoint("/user/pin-artist"), data, function(res){
-									alert(res);
+									Alloy.CFG.views._reload("home");
 								});
 							}
 						}
