@@ -20,13 +20,19 @@ var models = {
 
 //Routes
 require("./app/routes/group")(router, models);
+require("./app/routes/artist")(router, models);
+require("./app/routes/user")(router, models);
 
 router.get('/', function(req, res) {
 	res.json({ message: 'hooray!' });
 });
 
+router.post("/debug", function(req, res){
+	console.log(req.body);
+	res.json({success: true});
+});
 
 
 app.use('/api/v.1.0.0', router);
 app.listen(8888);
-console.log('Magic happens on port 8888');
+console.log('Tinderbox REST Server is now live on 127.0.0.1:8888');

@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tinderbox - WebInterface</title>
+    <script
+            src="//code.jquery.com/jquery-2.2.4.min.js"
+            integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+            crossorigin="anonymous"></script>
+
+    <script
+            src="//code.jquery.com/ui/1.12.1/jquery-ui.js"
+            integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30="
+            crossorigin="anonymous"></script>
+
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+</head>
+<body>
+
+<script>
+    String.prototype.ucfirst = function() {
+        return this.charAt(0).toUpperCase() + this.slice(1);
+    }
+
+    function syntaxHighlight(json) {
+        if (typeof json != 'string') {
+            json = JSON.stringify(json, undefined, 2);
+        }
+        json = json.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+        return json.replace(/("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g, function (match) {
+            var cls = 'number';
+            if (/^"/.test(match)) {
+                if (/:$/.test(match)) {
+                    cls = 'key';
+                } else {
+                    cls = 'string';
+                }
+            } else if (/true|false/.test(match)) {
+                cls = 'boolean';
+            } else if (/null/.test(match)) {
+                cls = 'null';
+            }
+            return '<span class="' + cls + '">' + match + '</span>';
+        });
+    }
+
+    $(function(){
+        $(".tabs").tabs();
+
+        function fetch(target){
+            var path = "",
+                container = null;
+
+            switch(target){
+                case "artist":
+                    path = "artists";
+                    container = "#list-artist";
+                    break;
+                case "user":
+                    path = "user";
+                    container = "#list-user";
+                    break;
+            }
+
+            $.ajax({
+                url: 'https://keja.me/school/mobile/tinderbox/api/v.1.0.0/' + path,
+                type: 'GET',
+                //data: 'ID=1&Name=John&Age=10', // or $('#myform').serializeArray()
+                success: function(res) {
+                    var result = $("<ul/>");
+                    console.log(res);
+                    res.forEach(function(item){
+                        var li = $("<li>"+item.name+"</li>");
+                        li.on("click", function(){
+                            $("pre").remove();
+                            var obj = "<pre>"+syntaxHighlight(item)+"</pre>";
+                           $(container).append(obj);
+                        });
+                        result.append(li);
+                    });
+                    $(container).html(result);
+                }
+            });
+        }
+        function create(target){
+            var path = "";
+
+            switch(target){
+                case "artist":
+                    path = "artist/create";
+                    break;
+                case "user":
+                    path = "user";
+                    break;
+            }
+
+            $.ajax({
+                url: 'https://keja.me/school/mobile/tinderbox/api/v.1.0.0/' + path,
+                type: 'POST',
+                data: $('#frm'+target.ucfirst()).serializeArray(),
+                success: function(res) {
+                    console.log(res);
+                    if(res && res._id){
+                        var index = $('.tabs a[href="#list-artist"]').parent().index();
+                        $("#tabs").tabs("option", "active", index);
+                    }
+                }
+            });
+        }
+
+        $("body").on("click", "a[href='#list-artist']", function(){         fetch("artist")     })
+                 .on("click", "a[href='#list-user']", function(){           fetch("user")       })
+                 .on("click", "input[name='doCreateArtist']", function(){   create("artist")    });
+    });
+</script>
+
+<style>
+    [id*='list'] ul {
+        width: 300px;
+        float: left;
+    }
+    #list-user ul li {
+        cursor: pointer;
+    }
+    #list-user pre {
+        width: 700px;
+        float: right;
+    }
+
+    pre {outline: 1px solid #ccc; padding: 5px; margin: 5px; }
+    .string { color: green; }
+    .number { color: darkorange; }
+    .boolean { color: blue; }
+    .null { color: magenta; }
+    .key { color: red; }
+
+    @import url('https://fonts.googleapis.com/css?family=Lato:400,700&subset=latin-ext');
+    @import url('https://fonts.googleapis.com/css?family=Inconsolata');
+
+    html {
+        font-family: 'Lato', Arial, Helvetica, sans-serif !important;
+        color: #043540;
+        background: #fff9f4;
+    }
+
+    body {
+        margin: 32px;
+    }
+
+    .ui-widget, .ui-widget input, .ui-widget select, .ui-widget textarea, .ui-widget button {
+        font-family: 'Lato', Arial,Helvetica,sans-serif;
+    }
+
+    .ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active, a.ui-button:active, .ui-button:active, .ui-button.ui-state-active:hover {
+        border: none;
+        background:  #50c7ab;
+    }
+
+    .ui-widget-header {
+        border: 1px solid #bfcccf;
+        background: #bfcccf;
+        color: #043540;
+        font-weight: bold;
+    }
+
+    .ui-corner-all, .ui-corner-bottom, .ui-corner-right, .ui-corner-br {
+        border-bottom-right-radius: 0px;
+    }
+    .ui-corner-all, .ui-corner-bottom, .ui-corner-left, .ui-corner-bl {
+        border-bottom-left-radius: 0px;
+    }
+    .ui-corner-all, .ui-corner-top, .ui-corner-right, .ui-corner-tr {
+        border-top-right-radius: 0px;
+    }
+    .ui-corner-all, .ui-corner-top, .ui-corner-left, .ui-corner-tl {
+        border-top-left-radius: 0px;
+    }
+
+    .ui-tabs .ui-tabs-nav {
+        margin: 0;
+        padding: 8px;
+    }
+
+    .ui-tabs {
+        padding: 0;
+    }
+
+    .ui-widget.ui-widget-content {
+        border: 1px solid #c5c5c5;
+    }
+
+    .ui-tabs .ui-tabs-panel {
+        display: block;
+        border-width: 0;
+        padding: 16px;
+        background: none;
+    }
+
+    .form-group {
+        margin: 0px 0px 16px 0px;
+        width: 100%;
+    }
+
+    .ui-tabs .ui-tabs-nav li {
+        list-style: none;
+        float: left;
+        position: relative;
+        top: 0;
+        margin: 0px 8px 0 0;
+        border-bottom-width: 0;
+        padding: 0;
+        white-space: nowrap;
+    }
+
+    .form-group label {
+        width: 100px;
+        display: inline-block;
+    }
+
+    .form-control {
+        margin: 0px 0px 0px 0px;
+        padding: 4px;
+        width: calc(100% - 100px - 16px);
+        right: 0px;
+    }
+
+    select {
+        width: calc(100% - 100px - 4px) !important;
+    }
+
+    .fb-submit {
+        padding: 8px 0px 0px 0px;
+    }
+
+    input[type=button] {
+        font-family: Arial;
+        color: #ffffff;
+        background: #50c7ab;
+        padding: 12px 16px;
+        text-decoration: none;
+        border: none;
+        outline: none;
+    }
+
+    input[type=button]:hover {
+        background: #8bc7b9;
+        text-decoration: none;
+    }
+
+    li {
+        margin: 0px 0px 8px 0px;
+    }
+
+    p {
+        line-height: 24px;
+    }
+
+    #list-user pre {
+        width: calc(100% - 10px) !important;
+        float: left !important;
+        overflow-x: scroll;
+        margin: 0px 0px 16px 0px;
+    }
+
+    pre {
+        font-family: 'Inconsolata', monospace;
+    }
+
+    .key {
+        color: #f23218 !important;
+    }
+
+    .string {
+        color: #34ad91 !important;
+    }
+
+    .number {
+        color: #ffbf00 !important;
+    }
+
+</style>
+
+    <h1>Tinderbox - web admin interface</h1>
+    <div id="main">
+
+        <div class="tabs">
+            <ul>
+                <li><a href="#artists">Artists</a></li>
+                <li><a href="#users">Users</a></li>
+                <li><a href="#groups">Groups</a></li>
+            </ul>
+            <div id="artists">
+                <div class="tabs">
+                    <ul>
+                        <li><a href="#new-artist">New</a></li>
+                        <li><a href="#list-artist">List</a></li>
+                    </ul>
+                    <div id="new-artist">
+                        <form class="rendered-form" id="frmArtist">
+
+                                <div class="fb-text form-group field-name">
+                                    <label for="name" class="fb-text-label">Name  </label>
+                                    <input type="text" placeholder="Name" class="form-control" name="name" value="Name" id="name">
+                                </div>
+                                <div class="fb-select form-group field-stage">
+                                    <label for="stage" class="fb-select-label">Stage  </label>
+                                    <select type="select" placeholder="Stage" class="form-control" name="stage" id="stage">
+                                        <option disabled="" selected="">Stage</option>
+                                        <option value="MagicBox">MagicBox</option>
+                                        <option value="Yellow">Yellow</option>
+                                        <option value="Red">Red</option>
+                                        <option value="Blue">Blue</option>
+                                    </select>
+                                </div>
+                                <div class="fb-text form-group field-time_start">
+                                    <label for="time_start" class="fb-text-label">Time start  </label>
+                                    <input type="text" class="form-control" name="time_start" id="time_start">
+                                </div>
+                                <div class="fb-text form-group field-time_end">
+                                    <label for="time_end" class="fb-text-label">Time end  </label>
+                                    <input type="text" class="form-control" name="time_end" id="time_end">
+                                </div>
+                                <div class="fb-text form-group field-image">
+                                    <label for="image" class="fb-text-label">Image (url)  <span class="tooltip-element" tooltip="enter a url for remote image">?</span></label>
+                                    <input type="text" placeholder="https://tiesto.nl/profile-image.png" class="form-control" name="image" id="image">
+                                </div>
+                                <div class="fb-undefined form-group field-description">
+                                    <label for="description" class="fb-textarea-label">Description  </label>
+                                    <textarea type="textarea" class="form-control" name="description" id="description"></textarea>
+                                </div>
+                                <div class="fb-submit form-group">
+                                    <input type="button" name="doCreateArtist" value="Create artist">
+                                </div>
+                        </form>
+                    </div>
+                    <div id="list-artist">
+                        loading..
+                    </div>
+                    <div style="clear: both;"></div>
+                </div>
+            </div>
+            <div id="users">
+                <div class="tabs">
+                    <ul>
+                        <li><a href="#new-user">New</a></li>
+                        <li><a href="#list-user">List</a></li>
+                    </ul>
+                    <div id="new-user">
+                        <form action="" id="frmUser">
+
+                        </form>
+                    </div>
+                    <div id="list-user">
+                        loading..
+                    </div>
+                    <div style="clear: both;"></div>
+                </div>
+            </div>
+            <div id="groups">
+                <p>Mauris eleifend est et turpis. Duis id erat. Suspendisse potenti. Aliquam vulputate, pede vel vehicula accumsan, mi neque rutrum erat, eu congue orci lorem eget lorem. Vestibulum non ante. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce sodales. Quisque eu urna vel enim commodo pellentesque. Praesent eu risus hendrerit ligula tempus pretium. Curabitur lorem enim, pretium nec, feugiat nec, luctus a, lacus.</p>
+                <p>Duis cursus. Maecenas ligula eros, blandit nec, pharetra at, semper at, magna. Nullam ac lacus. Nulla facilisi. Praesent viverra justo vitae neque. Praesent blandit adipiscing velit. Suspendisse potenti. Donec mattis, pede vel pharetra blandit, magna ligula faucibus eros, id euismod lacus dolor eget odio. Nam scelerisque. Donec non libero sed nulla mattis commodo. Ut sagittis. Donec nisi lectus, feugiat porttitor, tempor ac, tempor vitae, pede. Aenean vehicula velit eu tellus interdum rutrum. Maecenas commodo. Pellentesque nec elit. Fusce in lacus. Vivamus a libero vitae lectus hendrerit hendrerit.</p>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
