@@ -1,0 +1,19 @@
+"#modal": {
+	backgroundColor: 'transparent'
+}
+
+"#backgroundView": {
+	backgroundColor : '#000',
+    opacity         : 0.5,
+    right			: 0
+}
+
+"#containerView": {
+	opacity			: 1,
+	height          : 350,
+	width			: 250,
+    backgroundColor : Alloy.CFG.color_beige,
+    top				: 25,
+    left			: 100
+}
+

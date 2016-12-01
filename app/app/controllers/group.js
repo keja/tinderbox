@@ -2,8 +2,15 @@ $.btnBack.addEventListener("click", function(){
 	Alloy.CFG.views.groups();
 });
 
+
+
 var args = $.args,
 	REST = require("rest");
+
+$.btnAddMember.addEventListener("click", function(){
+	Ti.API.info(args);
+	Alloy.createController('memberModal', { group_id: args.group_id }).getView().open();
+});
 
 function showGroupMembers(group_id){
 	REST.GET( REST.endpoint("/groups/" + group_id), function(res){ 
@@ -34,6 +41,7 @@ function showGroupMembers(group_id){
 									REST.POST( REST.endpoint("/groups/leave"), data, function(res){
 										if(res.status === 200){
 											showGroupMembers(args.group_id); //download and group re-render list
+											Alloy.CFG.views._reload();
 										}
 									});
 								} 
@@ -44,10 +52,7 @@ function showGroupMembers(group_id){
 								icon: "icons/Near_Me_green.png",
 								args: true,
 								event: function(member){
-									Alloy.CFG.views.map({
-										type: "user",
-										id: member.id
-									});
+									Alloy.CFG.views.map(null, member.id);
 								}
 							}
 						]

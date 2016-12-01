@@ -8,7 +8,7 @@
 	   			<ImageView id="logo" />
 	   		</View>
 			<View class="header_right">
-				
+				<ImageView image="icons/Plus Math.png" class="header_action" left="85" id="btnAddMember"></ImageView>
 			</View>
 		</View>
 		<View layout="vertical">

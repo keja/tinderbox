@@ -15,7 +15,7 @@ var views = {
 			});
 		}
 		
-	},
+	}, 
 	_setActiveMenu: function(v){
 		//set all menues to inactive
 		$.nav.children.forEach(function(tab){
@@ -96,10 +96,12 @@ var views = {
 		//make new instance with correct group id
 		if(group_id){
 			controllers.group = Alloy.createController("group", {group_id: group_id});
+			//lastActive = "group";
 		}  
 				 
         $.view.removeAllChildren();//remove all content from view
         $.view.add([ controllers.group.getView() ]);//add new content to the view
+        
     }
 };
 
